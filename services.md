@@ -23,4 +23,4 @@ title: Services
 - **Cloud migration & management** (Azure, AWS, hybrid)
 - **Automation & scripting** (PowerShell, Bash, IaC)
 
-[Back to home](index.md)
+[Back to home](/)

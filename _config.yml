@@ -1,12 +1,15 @@
 title: QuirkyIT
-email: hello@quirkyit.com.au
 description: "Unique, bespoke IT & cybersecurity services for Australian businesses."
-baseurl: ""
 url: "https://quirkyit.github.io"
-theme: minima
+baseurl: "https://quirkyit.com.au"
+theme: minimal-mistakes-jekyll
 
-# Navigation structure (used by _includes/navbar.html)
-nav:
+# Minimal Mistakes config
+profile:
+  name: QuirkyIT
+  email: dean@quirkyit.com.au
+  image: /img/Logo.png
+navigation:
   - title: Home
     url: /
   - title: About

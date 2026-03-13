@@ -1,0 +1,17 @@
+title: QuirkyIT
+email: hello@quirkyit.com.au
+description: "Unique, bespoke IT & cybersecurity services for Australian businesses."
+baseurl: ""
+url: "https://quirkyit.github.io"
+theme: minima
+
+# Navigation structure (used by _includes/navbar.html)
+nav:
+  - title: Home
+    url: /
+  - title: About
+    url: /about.html
+  - title: Services
+    url: /services.html
+  - title: Contact
+    url: /contact.html

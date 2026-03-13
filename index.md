@@ -474,7 +474,7 @@
   <!-- NAV -->
   <nav>
     <div class="nav-logo">
-      <img src="Logo.png" alt="QuirkIT" />
+      <img src="/img/Logo.png" alt="QuirkIT" />
     </div>
     <ul class="nav-links">
       <li><a href="#services">Services</a></li>
@@ -755,7 +755,7 @@
   <footer>
     <img src="img/Logo.png" alt="QuirkIT" />
     <p>© 2025 QuirkIT Pty Ltd — Customised IT Solutions — Brisbane, AU</p>
-    <p style="font-family:var(--mono);font-size:0.65rem;color:var(--mid);">ABN: XX XXX XXX XXX</p>
+    <p style="font-family:var(--mono);font-size:0.65rem;color:var(--mid);">ABN: 46 972 509 781</p>
   </footer>
 
   <script>

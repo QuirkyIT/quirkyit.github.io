@@ -1,8 +1,11 @@
 title: QuirkyIT
 description: "Unique, bespoke IT & cybersecurity services for Australian businesses."
 url: "https://quirkyit.github.io"
-baseurl: "https://quirkyit.com.au"
-theme: minimal-mistakes-jekyll
+baseurl: ""
+remote_theme: "mmistakes/minimal-mistakes"
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
 
 # Minimal Mistakes config
 profile:

@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: single
 title: About QuirkyIT
 ---
 
@@ -17,4 +17,4 @@ We pride ourselves on:
 
 Because the best solutions often come from thinking differently. We combine technical know-how with real-world practicality.
 
-[Back to home](index.md)
+[Back to home](/)

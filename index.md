@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>QuirkIT – Customised IT Solutions</title>
+  <title>QuirkIT – Bespoke IT & Security Advice</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet" />
@@ -478,6 +478,7 @@
     </div>
     <ul class="nav-links">
       <li><a href="#services">Services</a></li>
+      <li><a href="#advisory">Advisory</a></li>
       <li><a href="#why">Open Source</a></li>
       <li><a href="#security">Security</a></li>
       <li><a href="#process">Process</a></li>
@@ -487,10 +488,10 @@
 
   <!-- HERO -->
   <div class="hero">
-    <p class="hero-eyebrow">Customised IT Solutions // Brisbane, AU</p>
-    <h1>Bespoke IT.<br /><span>Zero</span> Bloat.</h1>
+    <p class="hero-eyebrow">Bespoke IT, Security & Public Exposure Services // Brisbane, AU</p>
+    <h1>Bespoke IT.<br /><span>Practical</span> Security.</h1>
     <p class="hero-sub">
-      QuirkIT builds tailored technology solutions using open-source tooling — keeping costs lean while delivering enterprise-grade results. Backed by serious cyber security expertise.
+      QuirkIT provides tailored IT and cyber security advice, specialist public-exposure assessments, and open-source-first implementations where they make sense. Built for organisations that want practical outcomes, not vendor theatre.
     </p>
     <div class="hero-cta">
       <a href="#contact" class="btn btn-primary">Start a Conversation</a>
@@ -503,7 +504,7 @@
         <span class="dot dot-y"></span>
         <span class="dot dot-g"></span>
       </div>
-      <div><span class="cmd">$</span> <span class="hi">quirkit</span> --init</div>
+      <div><span class="cmd">$</span> <span class="hi">QuirkIT</span> --init</div>
       <div><span class="ok">✔</span> Open-source stack loaded</div>
       <div><span class="ok">✔</span> Security baseline applied</div>
       <div><span class="ok">✔</span> Custom config deployed</div>
@@ -519,44 +520,44 @@
     <div class="reveal">
       <p class="section-label">// 01 — What We Do</p>
       <h2>Services Built Around You</h2>
-      <p class="section-intro">No off-the-shelf packages. Every engagement starts with understanding your specific requirements and ends with a solution that fits like it was made for you — because it was.</p>
+      <p class="section-intro">Every engagement starts with understanding your environment and ends with something the organisation can actually use. No off-the-shelf packages. No unnecessary theatre.</p>
     </div>
     <div class="services-grid reveal">
       <div class="service-card">
+        <span class="service-icon">🔎</span>
+        <h3>OSINT Exposure Assessments</h3>
+        <p>Public-source reviews that show what information about your organisation is already exposed online, and what to do about it.</p>
+        <span class="service-tag">Exposure</span>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">🧭</span>
+        <h3>Threat Briefings</h3>
+        <p>Executive and technical briefings that turn public footprint and sector research into practical defensive priorities.</p>
+        <span class="service-tag">Intelligence</span>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">🧪</span>
+        <h3>Authorized Vulnerability Scanning</h3>
+        <p>Lightweight, scoped Nessus Essentials scanning for systems you own or are permitted to test.</p>
+        <span class="service-tag">Scanning</span>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">📈</span>
+        <h3>Logging & Visibility Setup</h3>
+        <p>Practical logging enablement based on government guidance so investigations, alerting, and response have something to work with.</p>
+        <span class="service-tag">Telemetry</span>
+      </div>
+      <div class="service-card">
         <span class="service-icon">⚙️</span>
-        <h3>Bespoke IT Solutions</h3>
-        <p>Custom-built systems, workflows, and integrations designed around your business operations — not the other way around.</p>
-        <span class="service-tag">Tailored</span>
-      </div>
-      <div class="service-card">
-        <span class="service-icon">🔒</span>
-        <h3>Cyber Security Consultancy</h3>
-        <p>Risk assessments, security architecture reviews, vulnerability scanning, and practical hardening guidance for SMEs.</p>
-        <span class="service-tag">Consultancy</span>
-      </div>
-      <div class="service-card">
-        <span class="service-icon">🐧</span>
-        <h3>Open Source Implementation</h3>
-        <p>Deploy battle-tested open-source platforms — from self-hosted productivity suites to infrastructure monitoring stacks.</p>
-        <span class="service-tag">Low Cost</span>
-      </div>
-      <div class="service-card">
-        <span class="service-icon">🌐</span>
-        <h3>Network & Infrastructure</h3>
-        <p>Design, deployment, and management of secure on-premise and hybrid network infrastructure — built to last.</p>
-        <span class="service-tag">Infrastructure</span>
-      </div>
-      <div class="service-card">
-        <span class="service-icon">📋</span>
-        <h3>IT Audits & Strategy</h3>
-        <p>Honest assessments of your current tech stack with a clear, prioritised roadmap for improvement — no jargon, no fluff.</p>
+        <h3>Bespoke IT Advisory</h3>
+        <p>Tailored advice for organisations that need practical guidance based on budget, risk, workflow, and real-world constraints.</p>
         <span class="service-tag">Advisory</span>
       </div>
       <div class="service-card">
-        <span class="service-icon">🔧</span>
-        <h3>Ongoing Support</h3>
-        <p>Flexible support arrangements for small businesses that need reliable IT without the overhead of an in-house team.</p>
-        <span class="service-tag">Managed</span>
+        <span class="service-icon">🐧</span>
+        <h3>Open-Source Implementation</h3>
+        <p>Deploy and support open-source tools where they fit the job, with a bias toward control, transparency, and lower ongoing cost.</p>
+        <span class="service-tag">Open Source</span>
       </div>
     </div>
   </section>
@@ -567,56 +568,89 @@
   <section id="why">
     <div class="why-grid">
       <div class="reveal">
-        <p class="section-label">// 02 — Our Philosophy</p>
-        <h2>Open Source Is the Smart Choice</h2>
+        <p class="section-label">// 02 — Open Source</p>
+        <h2>Control, Transparency, and Less Waste</h2>
         <ul class="why-list">
           <li>
             <span class="num">01</span>
             <div>
               <strong>No Licence Lock-in</strong>
-              <p>You own your stack. No annual licence fees, no vendor holding your data hostage, no surprise price hikes.</p>
+              <p>You own your stack. Fewer licence traps, fewer price shocks, fewer awkward renewals.</p>
             </div>
           </li>
           <li>
             <span class="num">02</span>
             <div>
-              <strong>Auditable & Transparent</strong>
-              <p>Open source code can be independently inspected — critical for security-conscious organisations.</p>
+              <strong>Transparent by Design</strong>
+              <p>Open-source tooling is easier to inspect, audit, and adapt to the organisation’s risk and workflow.</p>
             </div>
           </li>
           <li>
             <span class="num">03</span>
             <div>
-              <strong>Community-Proven Reliability</strong>
-              <p>Software trusted by thousands of organisations worldwide, with active development and long-term support.</p>
+              <strong>Fit-for-Purpose Choices</strong>
+              <p>Pick the right tool for the job, rather than the loudest sales deck in the room.</p>
             </div>
           </li>
           <li>
             <span class="num">04</span>
             <div>
-              <strong>Cost Savings Reinvested</strong>
-              <p>Licence savings go back into your business — or into custom development that delivers real competitive advantage.</p>
+              <strong>Costs That Go Further</strong>
+              <p>Money saved on unnecessary licences can go into better implementation, support, and security hardening.</p>
             </div>
           </li>
         </ul>
       </div>
       <div class="stat-block reveal">
         <div class="stat">
-          <span class="num">90%</span>
-          <span class="lbl">Typical licence cost savings</span>
+          <span class="num">Lean</span>
+          <span class="lbl">Reduce waste</span>
         </div>
         <div class="stat">
-          <span class="num">100%</span>
-          <span class="lbl">Solutions tailored to you</span>
+          <span class="num">Open</span>
+          <span class="lbl">See what’s happening</span>
         </div>
         <div class="stat">
-          <span class="num">0</span>
-          <span class="lbl">Vendor lock-in</span>
+          <span class="num">Practical</span>
+          <span class="lbl">Built for use, not spectacle</span>
         </div>
         <div class="stat">
-          <span class="num">24/7</span>
-          <span class="lbl">Community-backed tooling</span>
+          <span class="num">Tailored</span>
+          <span class="lbl">Shaped to the organisation</span>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ADVISORY -->
+  <section id="advisory">
+    <div class="reveal">
+      <p class="section-label">// 03 — Bespoke Advisory</p>
+      <h2>Advice That Fits the Organisation</h2>
+      <p class="section-intro">Sometimes the answer is not a product. It’s a clear recommendation, a sensible path forward, and help making the right choices without unnecessary spend.</p>
+    </div>
+    <div class="sec-grid reveal">
+      <div class="sec-item">
+        <span class="ico">🎯</span>
+        <h4>Tailored to Context</h4>
+        <p>Recommendations based on the organisation’s size, risk, budget, workflow, and existing technology — not a one-size-fits-all template.</p>
+      </div>
+      <div class="sec-item">
+        <span class="ico">🛠️</span>
+        <h4>Open-Source Where Appropriate</h4>
+        <p>Use open-source tools and platforms where they make sense, with implementation choices based on fit rather than ideology.</p>
+      </div>
+      <div class="sec-item">
+        <span class="ico">📋</span>
+        <h4>Practical Roadmaps</h4>
+        <p>Turn advice into an ordered set of steps the business can actually follow, including quick wins and longer-term improvements.</p>
+      </div>
+      <div class="sec-item">
+        <span class="ico">🤝</span>
+        <h4>Support That Stays Useful</h4>
+        <p>Help with decisions, implementation, and handover so the work survives contact with real-world operations.</p>
       </div>
     </div>
   </section>
@@ -626,9 +660,9 @@
   <!-- SECURITY -->
   <section id="security">
     <div class="reveal">
-      <p class="section-label">// 03 — Cyber Security</p>
+      <p class="section-label">// 04 — Cyber Security</p>
       <h2>Security Is Not Optional</h2>
-      <p class="section-intro">Cyber threats don't discriminate by business size. QuirkIT brings enterprise-level security thinking to small and medium businesses — practical, actionable, and affordable.</p>
+      <p class="section-intro">Cyber threats don’t discriminate by business size. QuirkIT brings practical security thinking to small and medium businesses — actionable, proportionate, and worth doing properly.</p>
     </div>
     <div class="sec-grid reveal">
       <div class="sec-item">
@@ -669,7 +703,7 @@
   <!-- PROCESS -->
   <section id="process">
     <div class="reveal">
-      <p class="section-label">// 04 — How We Work</p>
+      <p class="section-label">// 05 — How We Work</p>
       <h2>Straightforward. No Surprises.</h2>
       <p class="section-intro">A clear, collaborative process that keeps you informed and in control from the first conversation to final delivery.</p>
     </div>
@@ -711,11 +745,9 @@
   <section id="contact">
     <div class="contact-wrap">
       <div class="reveal">
-        <p class="section-label">// 05 — Get In Touch</p>
+        <p class="section-label">// 06 — Get In Touch</p>
         <h2>Let's Solve Something Together</h2>
-        <p class="contact-info">
-          <p>Whether you have a specific project in mind or just want to talk through a problem, we're happy to have an honest conversation about how QuirkIT can help.</p>
-        </p>
+        <p class="section-intro" style="margin-bottom:2rem;">Whether you have a specific project in mind or just want to talk through a problem, we’re happy to have an honest conversation about how QuirkIT can help.</p>
         <div class="contact-detail"><span class="ico">📧</span> hello@quirkit.com.au</div>
         <div class="contact-detail"><span class="ico">📍</span> Brisbane, Queensland, Australia</div>
         <div class="contact-detail"><span class="ico">⏰</span> Mon–Fri, 8am–6pm AEST</div>
@@ -733,12 +765,12 @@
           <label>Service Interest</label>
           <select>
             <option value="">Select a service area...</option>
-            <option>Bespoke IT Solutions</option>
-            <option>Cyber Security Consultancy</option>
-            <option>Open Source Implementation</option>
-            <option>Network & Infrastructure</option>
-            <option>IT Audit & Strategy</option>
-            <option>Ongoing Support</option>
+            <option>OSINT Exposure Assessments</option>
+            <option>Threat Briefings</option>
+            <option>Authorized Vulnerability Scanning</option>
+            <option>Logging & Visibility Setup</option>
+            <option>Bespoke IT Advisory</option>
+            <option>Open-Source Implementation</option>
             <option>Not Sure Yet</option>
           </select>
         </div>
@@ -753,8 +785,8 @@
 
   <!-- FOOTER -->
   <footer>
-    <img src="img/Logo.png" alt="QuirkIT" />
-    <p>© 2025 QuirkIT Pty Ltd — Customised IT Solutions — Brisbane, AU</p>
+    <img src="/img/Logo.png" alt="QuirkIT" />
+    <p>© 2026 QuirkIT Pty Ltd — Bespoke IT, Security & Advisory — Brisbane, AU</p>
     <p style="font-family:var(--mono);font-size:0.65rem;color:var(--mid);">ABN: 46 972 509 781</p>
   </footer>
 

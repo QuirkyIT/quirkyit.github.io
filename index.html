@@ -366,6 +366,30 @@
       flex-direction: column;
       gap: 0;
     }
+
+    /* ───── RESOURCES STRIP ───── */
+    .resource-callout {
+      border: 1px solid rgba(74,82,216,0.22);
+      background: linear-gradient(180deg, rgba(30,32,96,0.2), rgba(10,11,26,0.75));
+      padding: 2rem;
+      border-radius: 6px;
+      display: grid;
+      grid-template-columns: 1.5fr auto;
+      gap: 1.5rem;
+      align-items: center;
+    }
+    .resource-callout p {
+      color: var(--grey);
+      font-size: 0.96rem;
+      line-height: 1.75;
+      margin-top: 0.85rem;
+      max-width: 700px;
+    }
+    @media (max-width: 720px) {
+      .resource-callout {
+        grid-template-columns: 1fr;
+      }
+    }
     .step {
       display: grid;
       grid-template-columns: 80px 1fr;
@@ -479,6 +503,7 @@
     <ul class="nav-links">
       <li><a href="#services">Services</a></li>
       <li><a href="#advisory">Advisory</a></li>
+      <li><a href="/recommended-tools/">Recommended Tools</a></li>
       <li><a href="#why">Open Source</a></li>
       <li><a href="#security">Security</a></li>
       <li><a href="#process">Process</a></li>
@@ -496,6 +521,7 @@
     <div class="hero-cta">
       <a href="#contact" class="btn btn-primary">Start a Conversation</a>
       <a href="#services" class="btn btn-ghost">Explore Services</a>
+      <a href="/recommended-tools/" class="btn btn-ghost">Recommended Tools</a>
     </div>
 
     <div class="hero-badge">
@@ -657,10 +683,30 @@
 
   <div class="divider"></div>
 
+  <!-- RECOMMENDED TOOLS -->
+  <section id="resources">
+    <div class="reveal">
+      <p class="section-label">// 04 — Recommended Tools</p>
+      <h2>Fit-for-Purpose Recommendations</h2>
+      <p class="section-intro">Some organisations need a solution shortlist before they need a project. We’re building a QuirkyIT recommendations hub for tools we’d actually suggest for small business security, websites, uptime, and day-to-day operations.</p>
+    </div>
+    <div class="resource-callout reveal">
+      <div>
+        <h3 style="font-size:1.2rem;color:var(--white);margin-bottom:0;">Practical guidance, not affiliate sludge</h3>
+        <p>Expect buyer guides, side-by-side comparisons, and implementation notes grounded in real business fit. We only want products here that we’d be comfortable recommending directly to a client.</p>
+      </div>
+      <div>
+        <a href="/recommended-tools/" class="btn btn-primary">Open the Hub</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
   <!-- SECURITY -->
   <section id="security">
     <div class="reveal">
-      <p class="section-label">// 04 — Cyber Security</p>
+      <p class="section-label">// 05 — Cyber Security</p>
       <h2>Security Is Not Optional</h2>
       <p class="section-intro">Cyber threats don’t discriminate by business size. QuirkyIT brings practical security thinking to small and medium businesses — actionable, proportionate, and worth doing properly.</p>
     </div>
@@ -703,7 +749,7 @@
   <!-- PROCESS -->
   <section id="process">
     <div class="reveal">
-      <p class="section-label">// 05 — How We Work</p>
+      <p class="section-label">// 06 — How We Work</p>
       <h2>Straightforward. No Surprises.</h2>
       <p class="section-intro">A clear, collaborative process that keeps you informed and in control from the first conversation to final delivery.</p>
     </div>
@@ -745,7 +791,7 @@
   <section id="contact">
     <div class="contact-wrap">
       <div class="reveal">
-        <p class="section-label">// 06 — Get In Touch</p>
+        <p class="section-label">// 07 — Get In Touch</p>
         <h2>Let's Solve Something Together</h2>
         <p class="section-intro" style="margin-bottom:2rem;">Whether you have a specific project in mind or just want to talk through a problem, we’re happy to have an honest conversation about how QuirkyIT can help.</p>
         <div class="contact-detail"><span class="ico">📧</span> hello@quirkyit.com.au</div>
@@ -787,6 +833,7 @@
   <footer>
     <img src="/img/Logo.png" alt="QuirkyIT" />
     <p>© 2026 QuirkyIT Pty Ltd — Bespoke IT, Security & Advisory — Brisbane, AU</p>
+    <p style="font-family:var(--mono);font-size:0.65rem;color:var(--mid);"><a href="/recommended-tools/" style="color:inherit;text-decoration:none;">Recommended Tools</a> · <a href="/recommended-tools/#disclosure" style="color:inherit;text-decoration:none;">Disclosure</a></p>
     <p style="font-family:var(--mono);font-size:0.65rem;color:var(--mid);">ABN: 46 972 509 781</p>
   </footer>
 

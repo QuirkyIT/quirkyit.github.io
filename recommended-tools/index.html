@@ -4,13 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Recommended Tools | QuirkyIT</title>
-  <meta name="description" content="QuirkyIT recommended tools for small business websites, security, hosting, password management, and uptime monitoring." />
+  <meta name="description" content="QuirkyIT curated software and service recommendations for small business websites, security, and operations." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --navy: #1e2060;
       --indigo: #2d3291;
       --bright: #4a52d8;
       --grey: #9aa0b4;
@@ -20,7 +19,6 @@
       --light: #e8eaf6;
       --white: #f5f6ff;
       --accent: #00e5ff;
-      --warn: #ff6b35;
       --mono: 'Space Mono', monospace;
       --sans: 'Syne', sans-serif;
     }
@@ -78,15 +76,15 @@
       z-index: 1;
     }
     .hero, section {
-      max-width: 1100px;
+      max-width: 980px;
       margin: 0 auto;
       padding: 5rem 2.5rem;
     }
     .hero {
       padding-top: 6rem;
       display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 3rem;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 2rem;
       align-items: center;
     }
     .eyebrow, .section-label {
@@ -97,24 +95,31 @@
       text-transform: uppercase;
       margin-bottom: 1rem;
     }
-    h1, h2 {
+    h1, h2, h3 {
       color: var(--white);
       letter-spacing: -0.02em;
+    }
+    h1 {
+      font-size: clamp(2.7rem, 7vw, 5rem);
+      font-weight: 800;
       line-height: 0.98;
     }
-    h1 { font-size: clamp(2.8rem, 7vw, 5.2rem); font-weight: 800; }
-    h2 { font-size: clamp(1.8rem, 4vw, 3rem); font-weight: 800; margin-bottom: 1rem; }
-    .hero p,
-    .section-intro,
-    .card p,
-    .priority-card p,
-    .cluster-card p,
-    .disclosure p,
-    .next-steps li,
-    .page-table td {
+    h2 {
+      font-size: clamp(1.7rem, 4vw, 2.8rem);
+      font-weight: 800;
+      margin-bottom: 1rem;
+    }
+    h3 {
+      font-size: 1.05rem;
+      margin-bottom: 0.7rem;
+    }
+    p, li {
       color: var(--grey);
-      line-height: 1.75;
+      line-height: 1.8;
       font-size: 0.98rem;
+    }
+    .hero-copy {
+      max-width: 620px;
     }
     .hero-actions {
       margin-top: 2rem;
@@ -133,103 +138,48 @@
       border-radius: 4px;
       border: 1px solid rgba(74,82,216,0.35);
     }
-    .btn-primary { background: var(--indigo); color: var(--white); }
-    .btn-secondary { color: var(--accent); background: transparent; }
-    .hero-panel,
-    .card,
-    .priority-card,
-    .cluster-card,
-    .disclosure {
+    .btn-primary {
+      background: var(--indigo);
+      color: var(--white);
+    }
+    .btn-secondary {
+      color: var(--accent);
+      background: transparent;
+    }
+    .panel, .status-box, .disclosure {
       background: rgba(10,11,26,0.72);
       border: 1px solid rgba(74,82,216,0.2);
       border-radius: 8px;
     }
-    .hero-panel {
+    .panel, .status-box, .disclosure {
       padding: 1.5rem;
+    }
+    .status-box {
       font-family: var(--mono);
       font-size: 0.8rem;
       line-height: 1.9;
     }
-    .hero-panel strong { color: var(--accent); }
+    .status-box strong { color: var(--accent); }
     .divider {
       width: 100%;
       height: 1px;
       background: linear-gradient(90deg, transparent, rgba(74,82,216,0.4), transparent);
     }
-    .grid-3,
     .grid-2 {
       display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 1.25rem;
       margin-top: 2rem;
     }
-    .grid-3 { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
-    .grid-2 { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
-    .card,
-    .priority-card,
-    .cluster-card,
-    .disclosure {
-      padding: 1.5rem;
-    }
-    .card h3,
-    .priority-card h3,
-    .cluster-card h3 {
-      color: var(--white);
-      font-size: 1.05rem;
-      margin-bottom: 0.6rem;
-    }
-    .tag {
-      display: inline-block;
-      margin-top: 1rem;
-      font-family: var(--mono);
-      font-size: 0.66rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--accent);
-      border: 1px solid rgba(0,229,255,0.24);
-      padding: 0.25rem 0.55rem;
-      border-radius: 999px;
-    }
-    .priority-card ul,
-    .next-steps ol {
-      margin-top: 0.9rem;
+    ul {
       padding-left: 1.1rem;
-      color: var(--grey);
-      line-height: 1.8;
+      margin-top: 0.8rem;
     }
-    .page-table-wrap {
-      overflow-x: auto;
-      margin-top: 2rem;
-      border: 1px solid rgba(74,82,216,0.18);
-      border-radius: 8px;
-      background: rgba(10,11,26,0.72);
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      min-width: 860px;
-    }
-    th, td {
-      text-align: left;
-      padding: 1rem;
-      border-bottom: 1px solid rgba(74,82,216,0.12);
-      vertical-align: top;
-    }
-    th {
-      font-family: var(--mono);
-      font-size: 0.72rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--accent);
-    }
-    td strong { color: var(--white); }
-    .priority-high { color: #7ee787; }
-    .priority-medium { color: #ffd866; }
-    .priority-low { color: #ff9e64; }
     .disclosure {
       margin-top: 2rem;
     }
     footer {
-      max-width: 1100px;
+      max-width: 980px;
       margin: 0 auto;
       padding: 2rem 2.5rem 3rem;
       display: flex;
@@ -266,231 +216,44 @@
 
   <main>
     <section class="hero">
-      <div>
+      <div class="hero-copy">
         <p class="eyebrow">QuirkyIT // Recommended Tools</p>
-        <h1>Tools we’d actually recommend.</h1>
-        <p class="section-intro" style="margin-bottom:0;max-width:640px;">This hub is for practical, fit-for-purpose software and service recommendations for small business websites, security, hosting, password management, and operations. The goal is not volume publishing. The goal is to help organisations make better choices with less vendor nonsense.</p>
+        <h1>Practical recommendations, currently under review.</h1>
+        <p>QuirkyIT is building a curated recommendations area for software and services we’d be comfortable suggesting to small businesses across websites, security, hosting, and day-to-day operations.</p>
+        <p style="margin-top:1rem;">We’re keeping this deliberately tight. If it ends up here, it should be because it’s genuinely useful, fit for purpose, and worth recommending, not because it happens to have an affiliate program.</p>
         <div class="hero-actions">
-          <a class="btn btn-primary" href="#priority-programs">See current priorities</a>
-          <a class="btn btn-secondary" href="/#contact">Ask for tailored advice</a>
+          <a class="btn btn-primary" href="/#contact">Ask for tailored advice</a>
+          <a class="btn btn-secondary" href="/">Back to main site</a>
         </div>
       </div>
-      <div class="hero-panel">
-        <div><strong>Current focus</strong></div>
-        <div>• Password managers for teams</div>
-        <div>• WordPress security and malware response</div>
-        <div>• Premium hosting for business sites</div>
-        <div>• Uptime monitoring and site operations</div>
-        <div style="margin-top:0.9rem;color:#9aa0b4;">We only want products here that QuirkyIT would be comfortable recommending directly to a client.</div>
+      <div class="status-box">
+        <div><strong>Status</strong></div>
+        <div>• Public recommendations review in progress</div>
+        <div>• Final shortlists not published yet</div>
+        <div>• Individual guides and comparisons coming later</div>
+        <div style="margin-top:0.9rem;color:#9aa0b4;">If you need help choosing tools now, get in touch and we can give advice based on your actual setup and constraints.</div>
       </div>
     </section>
 
     <div class="divider"></div>
 
     <section>
-      <p class="section-label">// Why this exists</p>
-      <h2>High-trust recommendations, narrow scope</h2>
-      <p class="section-intro">QuirkyIT already advises businesses on security, websites, and practical IT decisions. This section extends that work into structured recommendation content, so buyers can compare sensible options without wading through generic affiliate SEO sludge.</p>
-      <div class="grid-3">
-        <div class="card">
-          <h3>Advice first</h3>
-          <p>Every page should still be useful if the reader never clicks an affiliate link. If it would not help as guidance, it should not be published.</p>
-          <span class="tag">Editorial standard</span>
-        </div>
-        <div class="card">
-          <h3>Close to QuirkyIT credibility</h3>
-          <p>We stay in categories where business IT, security, hosting, uptime, and WordPress operations already overlap with service experience.</p>
-          <span class="tag">Brand fit</span>
-        </div>
-        <div class="card">
-          <h3>Small number of strong pages</h3>
-          <p>Start with a few commercially relevant cornerstone pages, then expand only where rankings, clicks, and client fit justify it.</p>
-          <span class="tag">Execution discipline</span>
-        </div>
-      </div>
-    </section>
-
-    <div class="divider"></div>
-
-    <section id="priority-programs">
-      <p class="section-label">// Current priorities</p>
-      <h2>Best near-term monetisation targets</h2>
+      <p class="section-label">// What this section is for</p>
+      <h2>Recommendations grounded in real business fit</h2>
       <div class="grid-2">
-        <div class="priority-card">
-          <h3>Kinsta</h3>
-          <p>Strong fit for premium WordPress hosting recommendations, migrations, performance work, and businesses outgrowing cheap shared hosting.</p>
-          <ul>
-            <li>High buyer intent</li>
-            <li>Good editorial fit with hosting comparisons</li>
-            <li>Useful for service-led migration conversations</li>
-          </ul>
+        <div class="panel">
+          <h3>Useful before commercial</h3>
+          <p>Anything published here should be able to stand on its own as practical guidance. The point is to reduce noise and help businesses make better choices.</p>
         </div>
-        <div class="priority-card">
-          <h3>Sucuri</h3>
-          <p>Very close to QuirkyIT’s security and incident-response positioning, especially for hacked-site remediation and website firewall guidance.</p>
-          <ul>
-            <li>Strong BOFU security intent</li>
-            <li>Good fit for WordPress security cluster</li>
-            <li>Works in both reactive and preventive content</li>
-          </ul>
+        <div class="panel">
+          <h3>Close to QuirkyIT’s lane</h3>
+          <p>The scope is intentionally narrow, focused on areas where business IT, website operations, and security advice overlap naturally with QuirkyIT’s work.</p>
         </div>
-        <div class="priority-card">
-          <h3>1Password Business</h3>
-          <p>A credible recommendation for SMB team security, onboarding/offboarding, and operational maturity without sounding tacky or opportunistic.</p>
-          <ul>
-            <li>Clean SMB security narrative</li>
-            <li>Strong comparison-page potential</li>
-            <li>Good fit with advisory positioning</li>
-          </ul>
-        </div>
-        <div class="priority-card">
-          <h3>Second wave</h3>
-          <p>Wordfence, WP Engine, UptimeRobot, Cloudways, NordPass, and MalCare are sensible follow-ons once the first cluster is published and measured.</p>
-          <ul>
-            <li>Confirm unclear affiliate terms before scaling</li>
-            <li>Use Bitwarden and ManageWP primarily for authority content first</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <div class="divider"></div>
-
-    <section>
-      <p class="section-label">// Content architecture</p>
-      <h2>Initial cluster layout</h2>
-      <div class="grid-2">
-        <div class="cluster-card">
-          <h3>Password managers</h3>
-          <p>Buyer guides and comparisons for teams that need better password hygiene, shared vaults, onboarding controls, and practical admin simplicity.</p>
-          <span class="tag">1Password · NordPass · Bitwarden</span>
-        </div>
-        <div class="cluster-card">
-          <h3>WordPress security</h3>
-          <p>Tools for malware cleanup, website firewalls, hardening, and choosing a sensible protection stack for small business sites.</p>
-          <span class="tag">Sucuri · Wordfence · MalCare</span>
-        </div>
-        <div class="cluster-card">
-          <h3>Hosting</h3>
-          <p>Commercial-intent pages around managed WordPress hosting, migration triggers, performance, and when cheap hosting stops being good enough.</p>
-          <span class="tag">Kinsta · WP Engine · Cloudways</span>
-        </div>
-        <div class="cluster-card">
-          <h3>Uptime and operations</h3>
-          <p>Monitoring, alerts, and basic website-operations tooling that helps businesses catch problems before customers do.</p>
-          <span class="tag">UptimeRobot</span>
-        </div>
-      </div>
-    </section>
-
-    <div class="divider"></div>
-
-    <section>
-      <p class="section-label">// Publishing roadmap</p>
-      <h2>First 10 pages to build</h2>
-      <p class="section-intro">This starts with a small set of commercially sensible pages rather than a giant content farm. Priority is based on buyer intent, monetisation fit, and brand alignment.</p>
-      <div class="page-table-wrap">
-        <table class="page-table">
-          <thead>
-            <tr>
-              <th>Page</th>
-              <th>Type</th>
-              <th>Intent</th>
-              <th>Priority</th>
-              <th>Main targets</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><strong>/recommended-tools/</strong></td>
-              <td>Hub page</td>
-              <td>Commercial + navigation</td>
-              <td class="priority-high">High</td>
-              <td>All clusters</td>
-            </tr>
-            <tr>
-              <td><strong>/recommended-tools/password-managers-for-small-business/</strong></td>
-              <td>Best-for</td>
-              <td>Commercial investigation</td>
-              <td class="priority-high">High</td>
-              <td>1Password, NordPass, Bitwarden</td>
-            </tr>
-            <tr>
-              <td><strong>/recommended-tools/1password-vs-bitwarden-for-small-business/</strong></td>
-              <td>Comparison</td>
-              <td>High commercial investigation</td>
-              <td class="priority-high">High</td>
-              <td>1Password</td>
-            </tr>
-            <tr>
-              <td><strong>/recommended-tools/nordpass-vs-1password-business/</strong></td>
-              <td>Comparison</td>
-              <td>Commercial investigation</td>
-              <td class="priority-medium">Medium</td>
-              <td>NordPass, 1Password</td>
-            </tr>
-            <tr>
-              <td><strong>/recommended-tools/best-wordpress-security-tools/</strong></td>
-              <td>Best-for</td>
-              <td>Commercial investigation</td>
-              <td class="priority-high">High</td>
-              <td>Sucuri, Wordfence, MalCare</td>
-            </tr>
-            <tr>
-              <td><strong>/recommended-tools/sucuri-vs-wordfence/</strong></td>
-              <td>Comparison</td>
-              <td>High commercial investigation</td>
-              <td class="priority-high">High</td>
-              <td>Sucuri, Wordfence</td>
-            </tr>
-            <tr>
-              <td><strong>/recommended-tools/best-malware-removal-for-hacked-wordpress-sites/</strong></td>
-              <td>Problem-solution</td>
-              <td>Urgent transactional</td>
-              <td class="priority-high">High</td>
-              <td>Sucuri, MalCare</td>
-            </tr>
-            <tr>
-              <td><strong>/recommended-tools/best-wordpress-hosting-for-small-business/</strong></td>
-              <td>Best-for</td>
-              <td>Commercial investigation</td>
-              <td class="priority-high">Very High</td>
-              <td>Kinsta, WP Engine, Cloudways</td>
-            </tr>
-            <tr>
-              <td><strong>/recommended-tools/kinsta-vs-wp-engine/</strong></td>
-              <td>Comparison</td>
-              <td>High commercial investigation</td>
-              <td class="priority-high">Very High</td>
-              <td>Kinsta, WP Engine</td>
-            </tr>
-            <tr>
-              <td><strong>/recommended-tools/best-uptime-monitoring-tools/</strong></td>
-              <td>Best-for</td>
-              <td>Commercial investigation</td>
-              <td class="priority-medium">Medium</td>
-              <td>UptimeRobot</td>
-            </tr>
-          </tbody>
-        </table>
       </div>
       <div class="disclosure" id="disclosure">
-        <h3 style="margin-bottom:0.7rem;">Disclosure and editorial stance</h3>
-        <p>Some future pages in this section may include affiliate links, which means QuirkyIT may earn a commission if a reader signs up after clicking through. That does not change the editorial standard: we only want to recommend products that are a genuine fit for the use case. Where affiliate relationships exist, they should be disclosed clearly near the top of each relevant page.</p>
+        <h3>Disclosure</h3>
+        <p>Some future pages in this section may include affiliate links. If that happens, QuirkyIT may earn a commission if a reader signs up after clicking through. Any such relationship should be disclosed clearly on the relevant page and will not override the core standard of only recommending tools that are a genuine fit for the use case.</p>
       </div>
-    </section>
-
-    <div class="divider"></div>
-
-    <section class="next-steps">
-      <p class="section-label">// Next steps</p>
-      <h2>What to build next</h2>
-      <ol>
-        <li>Confirm payout and cookie details for any programs where terms are still unclear.</li>
-        <li>Draft the first three cornerstone pages: password managers, WordPress security, and WordPress hosting.</li>
-        <li>Add supporting disclosure and privacy updates before publishing affiliate-enabled content.</li>
-        <li>Measure traction before expanding into second-wave clusters or thinner comparison pages.</li>
-      </ol>
     </section>
   </main>
 

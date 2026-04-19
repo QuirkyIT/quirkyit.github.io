@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Recommended Tools | QuirkyIT</title>
-  <meta name="description" content="QuirkyIT curated software and service recommendations for small business websites, security, and operations." />
+  <meta name="description" content="QuirkyIT recommended tools for small business websites, security, AI-enabled operations, hosting, uptime, and practical business systems." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet" />
@@ -23,7 +23,6 @@
       --sans: 'Syne', sans-serif;
     }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
     body {
       background: var(--darker);
       color: var(--light);
@@ -49,7 +48,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 1rem 2.5rem;
+      padding: 1rem 2.2rem;
       background: rgba(6,7,16,0.88);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid rgba(74,82,216,0.2);
@@ -58,7 +57,7 @@
     .nav-links {
       list-style: none;
       display: flex;
-      gap: 1.5rem;
+      gap: 1.4rem;
       flex-wrap: wrap;
       justify-content: flex-end;
     }
@@ -71,19 +70,16 @@
       text-transform: uppercase;
     }
     .nav-links a:hover, .nav-links a.active { color: var(--accent); }
-    main, footer {
-      position: relative;
-      z-index: 1;
-    }
+    main, footer { position: relative; z-index: 1; }
     .hero, section {
-      max-width: 980px;
+      max-width: 1080px;
       margin: 0 auto;
-      padding: 5rem 2.5rem;
+      padding: 5rem 2.2rem;
     }
     .hero {
       padding-top: 6rem;
       display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
+      grid-template-columns: 1.15fr 0.85fr;
       gap: 2rem;
       align-items: center;
     }
@@ -101,25 +97,22 @@
     }
     h1 {
       font-size: clamp(2.7rem, 7vw, 5rem);
-      font-weight: 800;
       line-height: 0.98;
+      font-weight: 800;
     }
     h2 {
-      font-size: clamp(1.7rem, 4vw, 2.8rem);
+      font-size: clamp(1.8rem, 4vw, 2.9rem);
       font-weight: 800;
       margin-bottom: 1rem;
     }
     h3 {
       font-size: 1.05rem;
-      margin-bottom: 0.7rem;
+      margin-bottom: 0.65rem;
     }
     p, li {
       color: var(--grey);
-      line-height: 1.8;
       font-size: 0.98rem;
-    }
-    .hero-copy {
-      max-width: 620px;
+      line-height: 1.8;
     }
     .hero-actions {
       margin-top: 2rem;
@@ -134,27 +127,23 @@
       font-size: 0.8rem;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      padding: 0.9rem 1.4rem;
+      padding: 0.9rem 1.35rem;
       border-radius: 4px;
       border: 1px solid rgba(74,82,216,0.35);
     }
-    .btn-primary {
-      background: var(--indigo);
-      color: var(--white);
-    }
-    .btn-secondary {
-      color: var(--accent);
-      background: transparent;
-    }
-    .panel, .status-box, .disclosure {
-      background: rgba(10,11,26,0.72);
+    .btn-primary { background: var(--indigo); color: var(--white); }
+    .btn-secondary { color: var(--accent); background: transparent; }
+    .panel, .disclosure {
+      background: rgba(10,11,26,0.74);
       border: 1px solid rgba(74,82,216,0.2);
       border-radius: 8px;
-    }
-    .panel, .status-box, .disclosure {
       padding: 1.5rem;
     }
     .status-box {
+      background: rgba(10,11,26,0.9);
+      border: 1px solid rgba(74,82,216,0.3);
+      border-radius: 8px;
+      padding: 1.5rem;
       font-family: var(--mono);
       font-size: 0.8rem;
       line-height: 1.9;
@@ -165,23 +154,31 @@
       height: 1px;
       background: linear-gradient(90deg, transparent, rgba(74,82,216,0.4), transparent);
     }
-    .grid-2 {
+    .grid-2, .grid-3 {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.25rem;
+      gap: 1.2rem;
       margin-top: 2rem;
     }
-    ul {
-      padding-left: 1.1rem;
-      margin-top: 0.8rem;
+    .grid-2 { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+    .grid-3 { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+    .tag {
+      display: inline-block;
+      margin-top: 1rem;
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      border: 1px solid rgba(0,229,255,0.24);
+      padding: 0.25rem 0.55rem;
+      border-radius: 999px;
     }
-    .disclosure {
-      margin-top: 2rem;
-    }
+    ul { padding-left: 1.1rem; margin-top: 0.8rem; }
+    .disclosure { margin-top: 2rem; }
     footer {
-      max-width: 980px;
+      max-width: 1080px;
       margin: 0 auto;
-      padding: 2rem 2.5rem 3rem;
+      padding: 2rem 2.2rem 3rem;
       display: flex;
       justify-content: space-between;
       gap: 1rem;
@@ -194,9 +191,12 @@
       color: var(--mid);
       letter-spacing: 0.05em;
     }
-    @media (max-width: 820px) {
+    @media (max-width: 860px) {
+      .hero { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 760px) {
       nav, .hero, section, footer { padding-left: 1.2rem; padding-right: 1.2rem; }
-      .hero { grid-template-columns: 1fr; padding-top: 4rem; }
+      .hero { padding-top: 4.5rem; }
     }
   </style>
 </head>
@@ -208,7 +208,7 @@
     <ul class="nav-links">
       <li><a href="/">Home</a></li>
       <li><a href="/#services">Services</a></li>
-      <li><a href="/#advisory">Advisory</a></li>
+      <li><a href="/#ai">AI for Business</a></li>
       <li><a href="/recommended-tools/" class="active">Recommended Tools</a></li>
       <li><a href="/#contact">Contact</a></li>
     </ul>
@@ -216,11 +216,11 @@
 
   <main>
     <section class="hero">
-      <div class="hero-copy">
+      <div>
         <p class="eyebrow">QuirkyIT // Recommended Tools</p>
-        <h1>Practical recommendations, currently under review.</h1>
-        <p>QuirkyIT is building a curated recommendations area for software and services we’d be comfortable suggesting to small businesses across websites, security, hosting, and day-to-day operations.</p>
-        <p style="margin-top:1rem;">We’re keeping this deliberately tight. If it ends up here, it should be because it’s genuinely useful, fit for purpose, and worth recommending, not because it happens to have an affiliate program.</p>
+        <h1>Recommended tools, selected for real business fit.</h1>
+        <p>This section is for practical software and service recommendations across websites, security, AI-enabled operations, hosting, uptime, password management, and business systems that need to stay supportable.</p>
+        <p style="margin-top:1rem;">The intention is simple: if a product appears here, it should be because it is genuinely useful, credible, and appropriate for the use case, not because it happens to have the loudest affiliate payout.</p>
         <div class="hero-actions">
           <a class="btn btn-primary" href="/#contact">Ask for tailored advice</a>
           <a class="btn btn-secondary" href="/">Back to main site</a>
@@ -228,31 +228,55 @@
       </div>
       <div class="status-box">
         <div><strong>Status</strong></div>
-        <div>• Public recommendations review in progress</div>
-        <div>• Final shortlists not published yet</div>
-        <div>• Individual guides and comparisons coming later</div>
-        <div style="margin-top:0.9rem;color:#9aa0b4;">If you need help choosing tools now, get in touch and we can give advice based on your actual setup and constraints.</div>
+        <div>• Recommendations hub is being curated</div>
+        <div>• Review and comparison pages will be published selectively</div>
+        <div>• Affiliate-ready structure is in place</div>
+        <div>• Public recommendations will stay narrow and trust-based</div>
       </div>
     </section>
 
     <div class="divider"></div>
 
     <section>
-      <p class="section-label">// What this section is for</p>
-      <h2>Recommendations grounded in real business fit</h2>
-      <div class="grid-2">
+      <p class="section-label">// What belongs here</p>
+      <h2>High-trust categories, not random software lists</h2>
+      <div class="grid-3">
         <div class="panel">
-          <h3>Useful before commercial</h3>
-          <p>Anything published here should be able to stand on its own as practical guidance. The point is to reduce noise and help businesses make better choices.</p>
+          <h3>Security and password management</h3>
+          <p>Tools for business security uplift, password hygiene, website protection, and practical reduction of avoidable risk.</p>
+          <span class="tag">Security</span>
         </div>
         <div class="panel">
-          <h3>Close to QuirkyIT’s lane</h3>
-          <p>The scope is intentionally narrow, focused on areas where business IT, website operations, and security advice overlap naturally with QuirkyIT’s work.</p>
+          <h3>Website operations and hosting</h3>
+          <p>Fit-for-purpose recommendations around WordPress hosting, maintenance, uptime, monitoring, and the systems that keep sites stable.</p>
+          <span class="tag">Website operations</span>
+        </div>
+        <div class="panel">
+          <h3>AI-enabled business tooling</h3>
+          <p>Selected tools that help with workflow, search, support, drafting, documentation, and internal operations where AI is actually useful.</p>
+          <span class="tag">AI for business</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section>
+      <p class="section-label">// Editorial approach</p>
+      <h2>Useful first, commercial second</h2>
+      <div class="grid-2">
+        <div class="panel">
+          <h3>Selected carefully</h3>
+          <p>QuirkyIT only wants to recommend products that can be defended on fit, supportability, and business usefulness. Broad “top 50 tools” nonsense is not the goal.</p>
+        </div>
+        <div class="panel">
+          <h3>Ready for affiliate use</h3>
+          <p>Where affiliate relationships exist, they can be disclosed clearly and used cleanly without compromising the recommendation standard or muddying the site’s credibility.</p>
         </div>
       </div>
       <div class="disclosure" id="disclosure">
         <h3>Disclosure</h3>
-        <p>Some future pages in this section may include affiliate links. If that happens, QuirkyIT may earn a commission if a reader signs up after clicking through. Any such relationship should be disclosed clearly on the relevant page and will not override the core standard of only recommending tools that are a genuine fit for the use case.</p>
+        <p>Some pages in this section may include affiliate links. If that happens, QuirkyIT may earn a commission if a reader signs up after clicking through. That does not change the editorial standard: recommendations should be based on real business fit, not on who pays the most.</p>
       </div>
     </section>
   </main>

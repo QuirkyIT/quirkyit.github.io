@@ -63,7 +63,7 @@
     .nav-links a { text-decoration: none; }
     .nav-links a:hover { color: var(--accent); }
     .hero {
-      padding: 5.5rem 0 4rem;
+      padding: 5.5rem 0 3rem;
       display: grid;
       grid-template-columns: 1.15fr 0.85fr;
       gap: 2rem;
@@ -123,6 +123,28 @@
       padding: 1.5rem;
       box-shadow: var(--shadow);
     }
+    .hero-graphic {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.75rem;
+      margin-top: 1rem;
+    }
+    .mini-graphic {
+      background: linear-gradient(180deg, #ffffff, #eef4ff);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 0.85rem;
+      min-height: 118px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .mini-graphic svg { width: 100%; height: 54px; }
+    .mini-graphic span {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--text);
+    }
     .hero-card p, .card p, .note p, .footer-note { color: var(--muted); }
     .checklist { list-style: none; padding: 0; margin: 1rem 0 0; }
     .checklist li { padding: 0.55rem 0; border-top: 1px solid var(--line); }
@@ -142,16 +164,17 @@
       box-shadow: 0 1px 0 rgba(15, 23, 42, 0.02);
     }
     .card .icon {
-      width: 2.5rem;
-      height: 2.5rem;
+      width: 3rem;
+      height: 3rem;
       display: grid;
       place-items: center;
-      border-radius: 0.9rem;
+      border-radius: 0.95rem;
       background: #eff6ff;
       color: var(--accent);
       margin-bottom: 1rem;
-      font-size: 1.1rem;
+      overflow: hidden;
     }
+    .card .icon svg { width: 1.6rem; height: 1.6rem; }
     .card ul {
       margin: 0.85rem 0 0;
       padding-left: 1.1rem;
@@ -257,8 +280,8 @@
     <section class="hero">
       <div>
         <span class="eyebrow">Practical advice. Clear outcomes. Less noise.</span>
-        <h1>Clean IT, security, and AI advice for your business.</h1>
-        <p class="lede">Get straightforward advice that fits your business, reduces risk, cuts waste, and helps you choose the right technology without the jargon.</p>
+        <h1>Cost-effective, tailored advice for your business.</h1>
+        <p class="lede">Get straightforward advice that fits your business, brings value, reduces risk, and helps you choose the right technology without the jargon.</p>
         <div class="actions">
           <a class="btn btn-primary" href="#contact">Talk to QuirkyIT</a>
           <a class="btn btn-secondary" href="#services">See services</a>
@@ -266,13 +289,42 @@
         </div>
       </div>
       <div class="hero-card">
-        <h3>What matters most</h3>
+        <h3>What matters to your business</h3>
         <ul class="checklist">
-          <li>Advice shaped to your business, not cookie-cutter guidance</li>
-          <li>Open-source options where they help cut cost or avoid lock-in</li>
+          <li>Advice shaped to your business</li>
+          <li>Clear value without unnecessary complexity</li>
           <li>Practical AI advice that is safe and realistic</li>
-          <li>Clear product recommendations, with disclosure where needed</li>
+          <li>Product recommendations with clear disclosure</li>
         </ul>
+        <div class="hero-graphic" aria-hidden="true">
+          <div class="mini-graphic">
+            <svg viewBox="0 0 120 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="8" y="8" width="104" height="44" rx="12" fill="#E0F2FE" />
+              <path d="M22 39C31 28 42 24 56 28C68 32 76 23 98 18" stroke="#1D4ED8" stroke-width="4" stroke-linecap="round" />
+              <circle cx="22" cy="39" r="4" fill="#0F766E" />
+              <circle cx="56" cy="28" r="4" fill="#0F766E" />
+              <circle cx="98" cy="18" r="4" fill="#0F766E" />
+            </svg>
+            <span>Clarity</span>
+          </div>
+          <div class="mini-graphic">
+            <svg viewBox="0 0 120 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="8" y="8" width="104" height="44" rx="12" fill="#ECFDF5" />
+              <rect x="18" y="26" width="20" height="16" rx="4" fill="#0F766E" opacity="0.9" />
+              <rect x="48" y="18" width="20" height="24" rx="4" fill="#1D4ED8" opacity="0.9" />
+              <rect x="78" y="22" width="20" height="20" rx="4" fill="#94A3B8" />
+            </svg>
+            <span>Value</span>
+          </div>
+          <div class="mini-graphic">
+            <svg viewBox="0 0 120 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="8" y="8" width="104" height="44" rx="12" fill="#EEF2FF" />
+              <path d="M24 42L44 22L62 34L90 16" stroke="#1D4ED8" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M84 16H90V22" stroke="#0F766E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <span>Growth</span>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -285,7 +337,12 @@
       </div>
       <div class="grid-3">
         <article class="card">
-          <div class="icon">1</div>
+          <div class="icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M4 6h16M4 12h10M4 18h13" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+              <path d="M17 9l3 3-3 3" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
           <h3>Custom consultancy</h3>
           <p>Advice built around your business, including threat briefings, exposure reviews, and help choosing IT options that lower risk and support better decisions.</p>
           <ul>
@@ -296,7 +353,12 @@
           <span class="tag">Tailored to the business</span>
         </article>
         <article class="card">
-          <div class="icon">2</div>
+          <div class="icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="4" y="5" width="16" height="14" rx="3" stroke="currentColor" stroke-width="2.2"/>
+              <path d="M8 9h8M8 13h5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+            </svg>
+          </div>
           <h3>Open-source IT solutions</h3>
           <p>Help choosing practical IT tools, including open-source products where they can reduce cost, avoid lock-in, and still do the job well.</p>
           <ul>
@@ -307,9 +369,14 @@
           <span class="tag">Value and flexibility</span>
         </article>
         <article class="card">
-          <div class="icon">3</div>
+          <div class="icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 4v3M12 17v3M5 12H2M22 12h-3M6.8 6.8l2.1 2.1M15.1 15.1l2.1 2.1M17.2 6.8l-2.1 2.1M8.9 15.1l-2.1 2.1" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+              <circle cx="12" cy="12" r="3.2" stroke="currentColor" stroke-width="2.2"/>
+            </svg>
+          </div>
           <h3>AI use within business</h3>
-          <p>Help businesses work out where AI can save time, improve service, and fit into daily work without creating extra hassle or risk.</p>
+          <p>Help your business work out where AI can save time, improve service, and fit into daily work without creating extra hassle or risk.</p>
           <ul>
             <li>Review of where AI could help</li>
             <li>Practical use cases ranked by value</li>
@@ -330,7 +397,7 @@
         <div class="note">
           <span class="eyebrow">Recommendations page</span>
           <h3>Separate from the main services</h3>
-          <p>Product recommendations and affiliate links can sit here without getting mixed into the core services.</p>
+          <p>You can find product recommendations and affiliate links here without them getting mixed into the core services.</p>
         </div>
       </div>
     </section>

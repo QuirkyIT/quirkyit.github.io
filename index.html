@@ -3,627 +3,378 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>QuirkyIT | Value-Focused IT, Security and AI Advice</title>
-  <meta name="description" content="QuirkyIT provides specific, value-focused IT, security, website operations, and AI advice, including open-source options where they make sense for the business." />
+  <title>QuirkyIT | Practical IT, Security & AI Advice</title>
+  <meta name="description" content="QuirkyIT provides bespoke consultancy, open-source IT guidance, and practical AI advice for businesses that want clear outcomes without unnecessary complexity." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --navy: #1e2060;
-      --indigo: #2d3291;
-      --bright: #4a52d8;
-      --grey: #9aa0b4;
-      --mid: #6b7280;
-      --dark: #0a0b1a;
-      --darker: #060710;
-      --light: #e8eaf6;
-      --white: #f5f6ff;
-      --accent: #00e5ff;
-      --warn: #ff6b35;
-      --mono: 'Space Mono', monospace;
-      --sans: 'Syne', sans-serif;
+      --bg: #ffffff;
+      --surface: #f7f8fb;
+      --text: #0f172a;
+      --muted: #5b6475;
+      --line: #e5e7ef;
+      --accent: #1d4ed8;
+      --accent-2: #0f766e;
+      --shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+      --radius: 18px;
+      --max: 1120px;
+      --sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     }
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    *, *::before, *::after { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body {
-      background: var(--darker);
-      color: var(--light);
+      margin: 0;
       font-family: var(--sans);
-      overflow-x: hidden;
-    }
-    body::before {
-      content: '';
-      position: fixed;
-      inset: 0;
-      background-image:
-        linear-gradient(rgba(45,50,145,0.07) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(45,50,145,0.07) 1px, transparent 1px);
-      background-size: 40px 40px;
-      pointer-events: none;
-      z-index: 0;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
     }
     a { color: inherit; }
+    img { max-width: 100%; display: block; }
+    .wrap { max-width: var(--max); margin: 0 auto; padding: 0 1.25rem; }
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(229,231,239,0.9);
+    }
     nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 1rem 2.2rem;
-      background: rgba(6,7,16,0.88);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(74,82,216,0.2);
+      gap: 1rem;
+      min-height: 76px;
     }
-    .nav-logo img { height: 40px; }
+    .logo img { height: 34px; width: auto; }
     .nav-links {
       display: flex;
-      gap: 1.25rem;
-      list-style: none;
       flex-wrap: wrap;
-      justify-content: flex-end;
+      gap: 1rem;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      font-size: 0.92rem;
+      color: var(--muted);
     }
-    .nav-links a {
-      font-family: var(--mono);
-      font-size: 0.74rem;
-      color: var(--grey);
-      text-decoration: none;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      transition: color 0.2s;
-    }
+    .nav-links a { text-decoration: none; }
     .nav-links a:hover { color: var(--accent); }
     .hero {
-      position: relative;
-      min-height: 100vh;
+      padding: 5.5rem 0 4rem;
       display: grid;
       grid-template-columns: 1.15fr 0.85fr;
-      gap: 2.5rem;
+      gap: 2rem;
       align-items: center;
-      padding: 8rem 2.5rem 4rem;
-      max-width: 1180px;
-      margin: 0 auto;
-      z-index: 1;
     }
-    .hero-eyebrow,
-    .section-label {
-      font-family: var(--mono);
-      font-size: 0.74rem;
-      color: var(--accent);
-      letter-spacing: 0.24em;
-      text-transform: uppercase;
-      margin-bottom: 1.2rem;
-    }
-    .hero h1 {
-      font-weight: 800;
-      font-size: clamp(3rem, 7vw, 6rem);
-      line-height: 0.93;
-      letter-spacing: -0.03em;
-      color: var(--white);
-    }
-    .hero h1 span {
-      color: transparent;
-      -webkit-text-stroke: 1.4px var(--indigo);
-    }
-    .hero-sub {
-      margin-top: 1.8rem;
-      max-width: 620px;
-      font-size: 1.05rem;
-      line-height: 1.8;
-      color: var(--grey);
-    }
-    .hero-cta {
-      margin-top: 2.2rem;
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-    .btn {
+    .eyebrow {
       display: inline-block;
-      font-family: var(--mono);
-      font-size: 0.78rem;
-      letter-spacing: 0.1em;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
-      padding: 0.9rem 1.45rem;
-      border-radius: 4px;
-      text-decoration: none;
-      border: 1px solid rgba(74,82,216,0.35);
-      transition: all 0.2s;
-    }
-    .btn-primary {
-      background: var(--indigo);
-      color: var(--white);
-    }
-    .btn-primary:hover {
-      background: var(--bright);
-      box-shadow: 0 0 24px rgba(74,82,216,0.42);
-    }
-    .btn-ghost {
-      background: transparent;
       color: var(--accent);
+      margin-bottom: 1rem;
     }
-    .btn-ghost:hover {
-      background: rgba(0,229,255,0.07);
-      border-color: rgba(0,229,255,0.45);
-    }
-    .hero-panel {
-      background: rgba(10,11,26,0.9);
-      border: 1px solid rgba(74,82,216,0.3);
-      border-radius: 8px;
-      padding: 1.5rem;
-      font-family: var(--mono);
-      font-size: 0.78rem;
-      line-height: 1.95;
-    }
-    .hero-panel strong { color: var(--accent); }
-    .hero-panel .muted { color: var(--mid); }
-    .divider {
-      width: 100%;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(74,82,216,0.4), transparent);
-      position: relative;
-      z-index: 1;
-    }
-    section {
-      position: relative;
-      z-index: 1;
-      padding: 6rem 2.5rem;
-      max-width: 1180px;
-      margin: 0 auto;
+    h1, h2, h3 { line-height: 1.15; margin: 0; }
+    h1 {
+      font-size: clamp(2.7rem, 6vw, 5rem);
+      letter-spacing: -0.04em;
+      max-width: 11ch;
     }
     h2 {
       font-size: clamp(2rem, 4vw, 3rem);
-      font-weight: 800;
-      letter-spacing: -0.02em;
-      color: var(--white);
-      margin-bottom: 1rem;
+      letter-spacing: -0.03em;
+      margin-bottom: 0.85rem;
     }
-    .section-intro {
-      max-width: 700px;
-      color: var(--grey);
-      font-size: 1rem;
-      line-height: 1.8;
-      margin-bottom: 3rem;
+    h3 { font-size: 1.1rem; letter-spacing: -0.02em; }
+    .lede {
+      margin-top: 1.25rem;
+      max-width: 62ch;
+      color: var(--muted);
+      font-size: 1.05rem;
     }
-    .cards-3,
-    .cards-4,
-    .cards-2 {
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem;
+      margin-top: 1.75rem;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.9rem 1.2rem;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 600;
+      border: 1px solid var(--line);
+      transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+    }
+    .btn:hover { transform: translateY(-1px); box-shadow: var(--shadow); }
+    .btn-primary { background: var(--accent); color: #fff; border-color: var(--accent); }
+    .btn-secondary { background: #fff; color: var(--text); }
+    .hero-card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      box-shadow: var(--shadow);
+    }
+    .hero-card p, .card p, .note p, .footer-note { color: var(--muted); }
+    .checklist { list-style: none; padding: 0; margin: 1rem 0 0; }
+    .checklist li { padding: 0.55rem 0; border-top: 1px solid var(--line); }
+    .checklist li:first-child { border-top: 0; }
+    section { padding: 1rem 0 4rem; }
+    .section-head { margin-bottom: 1.5rem; }
+    .grid-3 {
       display: grid;
-      gap: 1.2rem;
+      gap: 1rem;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
     }
-    .cards-4 { grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); }
-    .cards-3 { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
-    .cards-2 { grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); }
-    .card {
-      background: rgba(10,11,26,0.72);
-      border: 1px solid rgba(74,82,216,0.18);
-      border-radius: 8px;
-      padding: 1.6rem;
-      transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
-    }
-    .card:hover {
-      border-color: rgba(0,229,255,0.35);
-      transform: translateY(-2px);
-      box-shadow: 0 0 24px rgba(0,229,255,0.05);
+    .card, .note {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 1.35rem;
+      box-shadow: 0 1px 0 rgba(15, 23, 42, 0.02);
     }
     .card .icon {
-      font-size: 1.5rem;
-      margin-bottom: 0.9rem;
-      display: block;
+      width: 2.5rem;
+      height: 2.5rem;
+      display: grid;
+      place-items: center;
+      border-radius: 0.9rem;
+      background: #eff6ff;
+      color: var(--accent);
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
     }
-    .card h3 {
-      font-size: 1.06rem;
-      color: var(--white);
-      margin-bottom: 0.7rem;
-    }
-    .card p,
-    .card li,
-    .callout p,
-    .contact-info p,
-    .contact-detail,
-    .timeline p {
-      color: var(--grey);
-      font-size: 0.95rem;
-      line-height: 1.8;
+    .card ul {
+      margin: 0.85rem 0 0;
+      padding-left: 1.1rem;
+      color: var(--muted);
     }
     .tag {
       display: inline-block;
       margin-top: 1rem;
-      font-family: var(--mono);
-      font-size: 0.64rem;
-      letter-spacing: 0.09em;
-      text-transform: uppercase;
-      color: var(--accent);
-      border: 1px solid rgba(0,229,255,0.22);
-      padding: 0.25rem 0.55rem;
-      border-radius: 999px;
-    }
-    .callout {
-      background: linear-gradient(180deg, rgba(30,32,96,0.18), rgba(10,11,26,0.78));
-      border: 1px solid rgba(74,82,216,0.2);
-      border-radius: 8px;
-      padding: 1.8rem;
-      display: grid;
-      grid-template-columns: 1.5fr auto;
-      gap: 1rem;
-      align-items: center;
-    }
-    .timeline {
-      display: flex;
-      flex-direction: column;
-      gap: 0;
-    }
-    .timeline .step {
-      display: grid;
-      grid-template-columns: 80px 1fr;
-      gap: 1.5rem;
-      padding: 1.6rem 0;
-      border-bottom: 1px solid rgba(74,82,216,0.12);
-    }
-    .timeline .step:last-child { border-bottom: none; }
-    .step-num {
-      font-family: var(--mono);
-      font-size: 2.3rem;
+      font-size: 0.75rem;
       font-weight: 700;
-      color: rgba(45,50,145,0.45);
-      line-height: 1;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent-2);
     }
-    .contact-wrap {
+    .split {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 3rem;
+      gap: 1rem;
       align-items: start;
     }
-    .contact-detail {
-      display: flex;
-      gap: 0.75rem;
-      align-items: center;
-      font-family: var(--mono);
-      margin-bottom: 0.7rem;
-    }
-    .contact-detail .ico { color: var(--accent); }
-    .contact-form {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-    .form-field {
-      display: flex;
-      flex-direction: column;
-      gap: 0.4rem;
-    }
-    .form-field label {
-      font-family: var(--mono);
-      font-size: 0.7rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--mid);
-    }
-    .form-field input,
-    .form-field textarea,
-    .form-field select {
-      background: rgba(10,11,26,0.8);
-      border: 1px solid rgba(74,82,216,0.28);
-      border-radius: 4px;
-      padding: 0.8rem 1rem;
-      color: var(--white);
-      font-family: var(--sans);
-      font-size: 0.95rem;
-      outline: none;
-    }
-    .form-field textarea { min-height: 140px; resize: vertical; }
-    footer {
-      position: relative;
-      z-index: 1;
-      border-top: 1px solid rgba(74,82,216,0.2);
-      padding: 2rem 2.5rem 3rem;
-      max-width: 1180px;
-      margin: 0 auto;
+    .callout {
       display: flex;
       justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
       gap: 1rem;
+      align-items: center;
+      background: linear-gradient(180deg, #ffffff, #f8fafc);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 1.35rem;
     }
-    footer img { height: 30px; opacity: 0.85; }
-    footer p {
-      font-family: var(--mono);
-      font-size: 0.7rem;
-      color: var(--mid);
-      letter-spacing: 0.05em;
+    .divider {
+      height: 1px;
+      background: var(--line);
+      margin: 0 0 4rem;
     }
-    .reveal {
-      opacity: 0;
-      transform: translateY(22px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
+    .timeline {
+      display: grid;
+      gap: 0.85rem;
     }
-    .reveal.visible {
-      opacity: 1;
-      transform: none;
+    .step {
+      display: grid;
+      grid-template-columns: 72px 1fr;
+      gap: 1rem;
+      align-items: start;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 1.1rem 1.25rem;
     }
-    @media (max-width: 920px) {
-      .hero { grid-template-columns: 1fr; padding-top: 7rem; }
-      .callout { grid-template-columns: 1fr; }
+    .step-num {
+      font-size: 2rem;
+      font-weight: 800;
+      color: #cbd5e1;
+      line-height: 1;
     }
-    @media (max-width: 760px) {
-      nav, .hero, section, footer { padding-left: 1.2rem; padding-right: 1.2rem; }
-      .contact-wrap { grid-template-columns: 1fr; }
-      .timeline .step { grid-template-columns: 60px 1fr; }
+    .contact {
+      display: grid;
+      grid-template-columns: 1fr 0.9fr;
+      gap: 1rem;
+      align-items: start;
+    }
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 1.5rem 0 2.25rem;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+    .footer-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem 1.25rem;
+      justify-content: space-between;
+      align-items: center;
+    }
+    @media (max-width: 900px) {
+      .hero, .grid-3, .split, .contact { grid-template-columns: 1fr; }
+      .callout { flex-direction: column; align-items: flex-start; }
+    }
+    @media (max-width: 640px) {
+      nav { padding: 0.75rem 0; }
+      .hero { padding-top: 3.5rem; }
+      h1 { max-width: none; }
+      .step { grid-template-columns: 1fr; }
+      .nav-links { gap: 0.7rem 1rem; font-size: 0.88rem; }
     }
   </style>
 </head>
 <body>
-  <nav>
-    <div class="nav-logo">
-      <img src="/img/Logo.png" alt="QuirkyIT" />
+  <header>
+    <div class="wrap">
+      <nav>
+        <a class="logo" href="/"><img src="/img/Logo.png" alt="QuirkyIT" /></a>
+        <ul class="nav-links">
+          <li><a href="#services">Services</a></li>
+          <li><a href="#recommendations">Recommendations</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
     </div>
-    <ul class="nav-links">
-      <li><a href="#services">Services</a></li>
-      <li><a href="#capabilities">Capabilities</a></li>
-      <li><a href="#ai">AI for Business</a></li>
-      <li><a href="/recommended-tools/">Recommended Tools</a></li>
-      <li><a href="#process">Process</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
+  </header>
 
-  <section class="hero">
-    <div>
-      <p class="hero-eyebrow">Specific advice, practical value, fit-for-purpose technology // Brisbane, AU</p>
-      <h1>Specific advice.<br /><span>Practical</span> value.<br />Better technology choices.</h1>
-      <p class="hero-sub">QuirkyIT helps small and medium organisations choose the right approach across IT, cyber security, website operations, infrastructure, and AI. The focus is on advice that creates real value, avoids unnecessary cost, and uses open-source options where they genuinely fit the business need.</p>
-      <div class="hero-cta">
-        <a href="#contact" class="btn btn-primary">Start a Conversation</a>
-        <a href="#services" class="btn btn-ghost">Explore Services</a>
-        <a href="/recommended-tools/" class="btn btn-ghost">Recommended Tools</a>
-      </div>
-    </div>
-    <div class="hero-panel">
-      <div><strong>$</strong> QuirkyIT --focus</div>
-      <div>✔ Specific advice tied to real business needs</div>
-      <div>✔ Practical value over unnecessary spend</div>
-      <div>✔ Open source where it makes sense</div>
-      <div>✔ Security, web, infrastructure and AI guidance</div>
-      <div>✔ Recommendations chosen for fit, not noise</div>
-      <div class="muted">Clear advice, practical value, and technology choices that fit the business.</div>
-    </div>
-  </section>
-
-  <div class="divider"></div>
-
-  <section id="services">
-    <div class="reveal">
-      <p class="section-label">// 01 — Core Services</p>
-      <h2>Advice-led services built around value</h2>
-      <p class="section-intro">QuirkyIT helps businesses choose sensible, supportable, and cost-aware approaches. These services are designed to improve decisions, reduce waste, and make technology fit the organisation properly.</p>
-    </div>
-    <div class="cards-4 reveal">
-      <div class="card">
-        <span class="icon">🔎</span>
-        <h3>Exposure Reviews</h3>
-        <p>Lawful public-footprint reviews that give businesses clearer information about what they are already exposing online, so decisions can be based on evidence instead of assumptions.</p>
-        <span class="tag">OSINT exposure</span>
-      </div>
-      <div class="card">
-        <span class="icon">🛰️</span>
-        <h3>Threat Briefings</h3>
-        <p>Executive and technical briefings that turn threat information into clearer business and technical decisions, with practical defensive priorities instead of generic alarmism.</p>
-        <span class="tag">Executive + technical</span>
-      </div>
-      <div class="card">
-        <span class="icon">🩺</span>
-        <h3>Vulnerability Scanning</h3>
-        <p>Authorised scanning and vulnerability hygiene work that helps businesses improve baseline security and prioritise fixes without overspending on the wrong work.</p>
-        <span class="tag">Authorised only</span>
-      </div>
-      <div class="card">
-        <span class="icon">📜</span>
-        <h3>Logging Baselines</h3>
-        <p>Practical logging design and implementation that improves visibility, troubleshooting, and incident response without turning logging into an expensive or bloated exercise.</p>
-        <span class="tag">Useful telemetry</span>
-      </div>
-      <div class="card">
-        <span class="icon">🌐</span>
-        <h3>Website Operations</h3>
-        <p>Support for hosting decisions, WordPress security, uptime, maintenance, and the operational choices that keep business websites reliable without unnecessary platform spend.</p>
-        <span class="tag">Web + hosting</span>
-      </div>
-      <div class="card">
-        <span class="icon">🧠</span>
-        <h3>AI for Business</h3>
-        <p>Practical use of AI for internal workflows, customer support, documentation, triage, search, and business operations, with a focus on value, fit, and governance.</p>
-        <span class="tag">Applied AI</span>
-      </div>
-      <div class="card">
-        <span class="icon">🧱</span>
-        <h3>Infrastructure Advice</h3>
-        <p>Fit-for-purpose advice on network, firewall, and platform choices, including open-source options where they make sense operationally, financially, and for the team that has to live with them.</p>
-        <span class="tag">Open source where appropriate</span>
-      </div>
-      <div class="card">
-        <span class="icon">🧭</span>
-        <h3>Bespoke Advisory</h3>
-        <p>Decision support that starts with the organisation’s context, then turns good information into sensible priorities, roadmaps, and implementation choices.</p>
-        <span class="tag">No one-size-fits-all</span>
-      </div>
-    </div>
-  </section>
-
-  <div class="divider"></div>
-
-  <section id="capabilities">
-    <div class="reveal">
-      <p class="section-label">// 02 — Capability Areas</p>
-      <h2>What QuirkyIT advice is trying to improve</h2>
-      <p class="section-intro">The common thread is better decision-making. That means clearer information, stronger value, safer systems, and technology choices that meet business needs without unnecessary complexity or cost.</p>
-    </div>
-    <div class="cards-3 reveal">
-      <div class="card">
-        <span class="icon">🏷️</span>
-        <h3>External footprint clarity</h3>
-        <p>Understand what your business, brands, infrastructure, and people are already exposing publicly before a problem forces the issue, and use that information to guide sensible next steps.</p>
-      </div>
-      <div class="card">
-        <span class="icon">🗺️</span>
-        <h3>Risk translated into decisions</h3>
-        <p>Threat context and technical findings are only useful if they turn into clearer priorities, better spending decisions, and action that an organisation can actually absorb.</p>
-      </div>
-      <div class="card">
-        <span class="icon">📈</span>
-        <h3>Better operational visibility</h3>
-        <p>Logging, uptime, reporting, and system visibility that help teams troubleshoot faster, investigate properly, and avoid wasting time guessing.</p>
-      </div>
-      <div class="card">
-        <span class="icon">🔐</span>
-        <h3>Practical security uplift</h3>
-        <p>Improve basic security posture through better hygiene, better tools, and fewer neglected systems rather than paying for theatre that does not materially help.</p>
-      </div>
-      <div class="card">
-        <span class="icon">🧰</span>
-        <h3>Fit-for-purpose tooling</h3>
-        <p>Pick tools based on business fit, supportability, and outcomes. Sometimes that means commercial products, sometimes open source, and sometimes no new tool at all.</p>
-      </div>
-      <div class="card">
-        <span class="icon">🤖</span>
-        <h3>AI introduced responsibly</h3>
-        <p>Use AI where it genuinely improves throughput or usefulness, while staying realistic about privacy, governance, reliability, and human oversight.</p>
-      </div>
-    </div>
-  </section>
-
-  <div class="divider"></div>
-
-  <section id="ai">
-    <div class="reveal">
-      <p class="section-label">// 03 — AI for Business</p>
-      <h2>AI that creates business value</h2>
-      <p class="section-intro">QuirkyIT helps businesses use AI where it improves speed, clarity, documentation, support, search, or internal workflow without adding unnecessary complexity, cost, or risk. The goal is simple: add real value, not novelty.</p>
-    </div>
-    <div class="cards-3 reveal">
-      <div class="card">
-        <span class="icon">📝</span>
-        <h3>Internal workflow support</h3>
-        <p>Use AI to improve drafting, documentation, triage, note-taking, internal search, and repetitive admin where that saves real time for the business.</p>
-      </div>
-      <div class="card">
-        <span class="icon">💬</span>
-        <h3>Customer-facing assistance</h3>
-        <p>Deploy AI carefully for support flows, FAQs, lead qualification, and internal knowledge access where it helps the customer and does not create expensive nonsense.</p>
-      </div>
-      <div class="card">
-        <span class="icon">🛡️</span>
-        <h3>Governance and fit</h3>
-        <p>Decide what should and should not be automated, what data can safely be used, where human review stays mandatory, and whether the expected value is real.</p>
-      </div>
-    </div>
-    <div class="callout reveal" style="margin-top:2rem;">
+  <main class="wrap">
+    <section class="hero">
       <div>
-        <h3 style="font-size:1.15rem;color:var(--white);margin-bottom:0.5rem;">AI should support the business, not become a side quest.</h3>
-        <p>QuirkyIT can help assess where AI creates real value, where it introduces risk, and how to adopt it without bolting gimmicks onto already messy systems.</p>
+        <span class="eyebrow">Practical advice. Clear outcomes. Less noise.</span>
+        <h1>Clean IT, security, and AI advice for real businesses.</h1>
+        <p class="lede">QuirkyIT helps businesses make better technology decisions with bespoke consultancy, open-source-friendly IT guidance, and practical AI advice. The goal is to reduce risk, cut waste, and keep solutions aligned to the business.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="#contact">Talk to QuirkyIT</a>
+          <a class="btn btn-secondary" href="#services">See services</a>
+          <a class="btn btn-secondary" href="/recommended-tools/">Recommendations</a>
+        </div>
       </div>
-      <div>
-        <a href="#contact" class="btn btn-primary">Talk About AI Use</a>
+      <div class="hero-card">
+        <h3>What this site focuses on</h3>
+        <ul class="checklist">
+          <li>Advice shaped to the business, not cookie-cutter guidance</li>
+          <li>Open-source options where they help cut cost or avoid lock-in</li>
+          <li>AI advice that is practical, safe, and realistic</li>
+          <li>A separate page for product recommendations and disclosures</li>
+        </ul>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <div class="divider"></div>
+    <div class="divider"></div>
 
-  <section id="recommendations">
-    <div class="reveal">
-      <p class="section-label">// 04 — Recommended Tools</p>
-      <h2>Trusted recommendations shaped by value and fit</h2>
-      <p class="section-intro">The recommendations area focuses on high-trust guidance around websites, security, hosting, password managers, uptime, AI-enabled operations, and practical business tooling. Recommendations come first, and any affiliate relationships are disclosed clearly where relevant.</p>
-    </div>
-    <div class="callout reveal">
-      <div>
-        <h3 style="font-size:1.15rem;color:var(--white);margin-bottom:0.5rem;">Clear recommendations, chosen carefully</h3>
-        <p>If a tool gets featured, it should be there because it genuinely fits the need, delivers value, and is something QuirkyIT would be comfortable recommending directly to a client.</p>
+    <section id="services">
+      <div class="section-head">
+        <span class="eyebrow">Three primary services</span>
+        <h2>Simple service structure</h2>
       </div>
-      <div>
-        <a href="/recommended-tools/" class="btn btn-primary">Open Recommended Tools</a>
+      <div class="grid-3">
+        <article class="card">
+          <div class="icon">1</div>
+          <h3>Custom consultancy</h3>
+          <p>Advice built around the business, including threat briefings, exposure reviews, and help choosing IT options that lower risk and support better decisions.</p>
+          <ul>
+            <li>Threat briefings with clear next steps</li>
+            <li>Exposure reviews based on what can be seen publicly</li>
+            <li>Advice tied to business goals and risk reduction</li>
+          </ul>
+          <span class="tag">Tailored to the business</span>
+        </article>
+        <article class="card">
+          <div class="icon">2</div>
+          <h3>Open-source IT solutions</h3>
+          <p>Help choosing practical IT tools, including open-source products where they can reduce cost, avoid lock-in, and still do the job well.</p>
+          <ul>
+            <li>Tool selection and honest advice</li>
+            <li>Lower-cost options where they make sense</li>
+            <li>Implementation guidance that stays practical</li>
+          </ul>
+          <span class="tag">Value and flexibility</span>
+        </article>
+        <article class="card">
+          <div class="icon">3</div>
+          <h3>AI use within business</h3>
+          <p>Help businesses work out where AI can save time, improve service, and fit into daily work without creating extra hassle or risk.</p>
+          <ul>
+            <li>Review of where AI could help</li>
+            <li>Practical use cases ranked by value</li>
+            <li>Simple advice on safe adoption</li>
+          </ul>
+          <span class="tag">Practical AI adoption</span>
+        </article>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <div class="divider"></div>
+    <section>
+      <div class="split">
+        <div class="note">
+          <span class="eyebrow">What the advice is meant to do</span>
+          <h3>Make things clearer and easier to run</h3>
+          <p>Good advice should help a business make better choices, reduce risk, and avoid paying for things it does not need.</p>
+        </div>
+        <div class="note">
+          <span class="eyebrow">Recommendations page</span>
+          <h3>Separate from the main services</h3>
+          <p>The recommendations page is where products, advice, and affiliate links can sit without getting mixed into the main service pages.</p>
+        </div>
+      </div>
+    </section>
 
-  <section id="process">
-    <div class="reveal">
-      <p class="section-label">// 05 — How QuirkyIT Works</p>
-      <h2>Straightforward, scoped, and value-focused</h2>
-      <p class="section-intro">The process is straightforward: understand the environment, define the right slice of work, deliver advice or implementation that is actually useful, and leave the organisation clearer than before.</p>
-    </div>
-    <div class="timeline reveal">
-      <div class="step">
-        <span class="step-num">01</span>
+    <div class="divider"></div>
+
+    <section id="recommendations">
+      <div class="section-head">
+        <span class="eyebrow">Recommendations / advice</span>
+        <h2>Product advice with clear disclosure</h2>
+      </div>
+      <div class="callout">
         <div>
-          <h3>Discovery and context</h3>
-          <p>Start with the environment, goals, pain points, budget, and constraints. Good advice depends on understanding what actually matters to the organisation.</p>
+          <h3>Useful recommendations, not random lists</h3>
+          <p>Use this page for carefully selected tools, software, and services that fit the business need. Affiliate links can be included here, with clear disclosure.</p>
         </div>
+        <a class="btn btn-primary" href="/recommended-tools/">Open recommendations page</a>
       </div>
-      <div class="step">
-        <span class="step-num">02</span>
-        <div>
-          <h3>Scope the useful work</h3>
-          <p>Define the service boundary properly, whether that is exposure review, threat briefing, logging uplift, AI workflow support, vulnerability hygiene, or broader advisory work.</p>
-        </div>
-      </div>
-      <div class="step">
-        <span class="step-num">03</span>
-        <div>
-          <h3>Deliver practical outcomes</h3>
-          <p>Provide something the business can use, whether that is a clearer picture, a better baseline, a shortlist of recommendations, or a set of next actions tied to the real environment and budget.</p>
-        </div>
-      </div>
-      <div class="step">
-        <span class="step-num">04</span>
-        <div>
-          <h3>Support the next move</h3>
-          <p>Follow through into implementation, validation, or follow-up work where it makes sense, so the organisation is not left with a pile of theory and no practical path forward.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <div class="divider"></div>
+    <div class="divider"></div>
 
-  <section id="contact">
-    <div class="contact-wrap">
-      <div class="contact-info reveal">
-        <p class="section-label">// 06 — Get In Touch</p>
-        <h2>Let’s work out the right approach</h2>
-        <p>Whether you need help with cyber security, website operations, AI adoption, logging, vulnerability hygiene, or fit-for-purpose technical decisions, QuirkyIT can help shape the right next step with value, practicality, and business fit in mind.</p>
-        <div class="contact-detail"><span class="ico">📧</span> dean@quirkyit.com.au</div>
-        <div class="contact-detail"><span class="ico">📍</span> Brisbane, Queensland, Australia</div>
-        <div class="contact-detail"><span class="ico">⏰</span> Mon–Fri, 8am–6pm AEST</div>
-        <div class="card" style="margin-top:1.4rem;">
-          <h3>What I can help with</h3>
-          <p>Practical AI adoption, website improvements, cyber security uplift, logging, and other business technology decisions that should earn their keep.</p>
+    <section id="contact">
+      <div class="contact">
+        <div>
+          <span class="eyebrow">Contact</span>
+          <h2>Need help choosing the right approach?</h2>
+          <p class="lede">If you want, QuirkyIT can help turn this into final page copy, service pages, and a simple navigation structure for the rest of the site.</p>
         </div>
-        <a href="mailto:dean@quirkyit.com.au" class="btn btn-primary" style="text-align:center;margin-top:1rem;">Email Dean</a>
+        <div class="note">
+          <h3>Get in touch</h3>
+          <p>dean@quirkyit.com.au</p>
+          <p>Brisbane, Queensland, Australia</p>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
   <footer>
-    <img src="/img/Logo.png" alt="QuirkyIT" />
-    <p>© 2026 QuirkyIT Pty Ltd · Bespoke IT, Security, AI & Advisory · Brisbane, AU</p>
-    <p><a href="/recommended-tools/" style="text-decoration:none;color:inherit;">Recommended Tools</a> · <a href="/recommended-tools/#disclosure" style="text-decoration:none;color:inherit;">Disclosure</a></p>
+    <div class="wrap footer-row">
+      <img src="/img/Logo.png" alt="QuirkyIT" style="height:28px; width:auto;" />
+      <div class="footer-note">© 2026 QuirkyIT Pty Ltd · Practical IT, Security & AI Advice</div>
+      <div><a href="/recommended-tools/">Recommendations</a> · <a href="/recommended-tools/#disclosure">Disclosure</a></div>
+    </div>
   </footer>
-
-  <script>
-    const reveals = document.querySelectorAll('.reveal');
-    const obs = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          obs.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.12 });
-    reveals.forEach(node => obs.observe(node));
-  </script>
 </body>
 </html>

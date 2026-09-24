@@ -1,481 +1,166 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-AU">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>QuirkyIT | Practical IT, Security &amp; AI Advice for Brisbane Business</title>
-  <meta name="description" content="QuirkyIT provides bespoke consultancy, open-source IT guidance, and practical AI advice for Brisbane businesses and individuals who want clear outcomes without unnecessary complexity. Cyber security and threat intelligence included." />
-  <meta name="keywords" content="IT consultancy Brisbane, cyber security advice, threat intelligence, open source IT solutions, business AI advice, exposure assessment, small business IT security Australia" />
-  <meta name="author" content="QuirkyIT Pty Ltd" />
-  <meta name="robots" content="index, follow" />
-  <meta name="theme-color" content="#1d4ed8" />
-  <link rel="canonical" href="https://quirkyit.com.au/" />
-
-  <!-- Open Graph -->
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="QuirkyIT | Practical IT, Security &amp; AI Advice" />
-  <meta property="og:description" content="Bespoke consultancy, open-source IT guidance, and practical AI advice for Brisbane businesses and individuals — with cyber security and threat intelligence built in." />
-  <meta property="og:url" content="https://quirkyit.com.au/" />
-  <meta property="og:image" content="https://quirkyit.com.au/img/Logo.png" />
-  <meta property="og:locale" content="en_AU" />
-  <meta property="og:site_name" content="QuirkyIT" />
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="QuirkyIT | Practical IT, Security &amp; AI Advice" />
-  <meta name="twitter:description" content="Bespoke consultancy, open-source IT, and practical AI advice for Brisbane businesses and individuals — cyber security and threat intelligence included." />
-  <meta name="twitter:image" content="https://quirkyit.com.au/img/Logo.png" />
-
-  <!-- Structured data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    "name": "QuirkyIT",
-    "legalName": "QuirkyIT Pty Ltd",
-    "description": "Bespoke consultancy, open-source IT guidance, and practical AI advice for businesses and individuals, with cyber security and threat intelligence included.",
-    "url": "https://quirkyit.com.au/",
-    "logo": "https://quirkyit.com.au/img/Logo.png",
-    "image": "https://quirkyit.com.au/img/Logo.png",
-    "email": "dean@quirkyit.com.au",
-    "areaServed": { "@type": "Place", "name": "Brisbane, Queensland, Australia" },
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Brisbane",
-      "addressRegion": "QLD",
-      "addressCountry": "AU"
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Cyber security, IT &amp; AI for business | QuirkyIT</title>
+<meta name="description" content="Cyber security assessments, threat hunting, business IT and AI for small and medium businesses in Moreton Bay and North Brisbane. Practical help from QuirkyIT." />
+<meta name="author" content="QuirkyIT Pty Ltd" />
+<meta name="robots" content="index, follow" />
+<meta name="theme-color" content="#1d4ed8" />
+<link rel="canonical" href="https://quirkyit.com.au/" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="icon" href="/favicon.ico" sizes="32x32" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Cyber security, IT &amp; AI for business | QuirkyIT" />
+<meta property="og:description" content="Cyber security assessments, threat hunting, business IT and AI for small and medium businesses in Moreton Bay and North Brisbane. Practical help from QuirkyIT." />
+<meta property="og:url" content="https://quirkyit.com.au/" />
+<meta property="og:image" content="https://quirkyit.com.au/img/social-card.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="QuirkyIT — Cyber security, IT and AI for business in Moreton Bay and North Brisbane" />
+<meta property="og:locale" content="en_AU" />
+<meta property="og:site_name" content="QuirkyIT" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Cyber security, IT &amp; AI for business | QuirkyIT" />
+<meta name="twitter:description" content="Cyber security assessments, threat hunting, business IT and AI for small and medium businesses in Moreton Bay and North Brisbane. Practical help from QuirkyIT." />
+<meta name="twitter:image" content="https://quirkyit.com.au/img/social-card.png" />
+<meta name="twitter:image:alt" content="QuirkyIT — Cyber security, IT and AI for business" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "@id": "https://quirkyit.com.au/#business",
+  "name": "QuirkyIT",
+  "legalName": "QuirkyIT Pty Ltd",
+  "description": "Cyber security assessments, threat hunting, business IT and AI for small and medium businesses in Moreton Bay and North Brisbane. Practical help from QuirkyIT.",
+  "url": "https://quirkyit.com.au/",
+  "logo": "https://quirkyit.com.au/img/Logo.png",
+  "image": "https://quirkyit.com.au/img/social-card.png",
+  "email": "dean@quirkyit.com.au",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Moreton Bay",
+    "addressRegion": "QLD",
+    "addressCountry": "AU"
+  },
+  "areaServed": [
+    {
+      "@type": "AdministrativeArea",
+      "name": "Moreton Bay Region, Queensland"
     },
-    "knowsAbout": ["IT Consultancy", "Cyber Security", "Threat Intelligence", "Open Source Software", "Artificial Intelligence", "Exposure Assessment"],
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Services",
-      "itemListElement": [
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Custom Consultancy, Cyber Security & Threat Intelligence" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Open Source IT Solutions" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "AI Use Within Business" } }
-      ]
+    {
+      "@type": "Place",
+      "name": "North Brisbane, Queensland"
+    },
+    {
+      "@type": "Place",
+      "name": "North Lakes"
+    },
+    {
+      "@type": "Place",
+      "name": "Redcliffe"
+    },
+    {
+      "@type": "Place",
+      "name": "Caboolture"
+    },
+    {
+      "@type": "Place",
+      "name": "Strathpine"
+    },
+    {
+      "@type": "Place",
+      "name": "Chermside"
     }
+  ],
+  "knowsAbout": [
+    "Cyber Security",
+    "Exposure Assessment",
+    "Cyber Security Training",
+    "Vulnerability Assessment",
+    "Threat Hunting",
+    "Security Logging",
+    "IT Consultancy",
+    "Open Source Software",
+    "Business AI"
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Security assessments",
+          "url": "https://quirkyit.com.au/know-your-exposure/"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Detection & investigation",
+          "url": "https://quirkyit.com.au/detect-and-monitor/"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Cyber security training",
+          "url": "https://quirkyit.com.au/security-training/"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Business IT",
+          "url": "https://quirkyit.com.au/business-it/"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Business AI & automation",
+          "url": "https://quirkyit.com.au/business-ai/"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Ongoing IT & security care",
+          "url": "https://quirkyit.com.au/ongoing-care/"
+        }
+      }
+    ]
   }
-  </script>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <style>
-    :root {
-      --bg: #ffffff;
-      --surface: #f7f8fb;
-      --text: #0f172a;
-      --muted: #5b6475;
-      --line: #e5e7ef;
-      --accent: #1d4ed8;
-      --accent-2: #0f766e;
-      --shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
-      --radius: 18px;
-      --max: 1120px;
-      --sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    }
-    *, *::before, *::after { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      font-family: var(--sans);
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-    }
-    a { color: inherit; }
-    img { max-width: 100%; display: block; }
-    .wrap { max-width: var(--max); margin: 0 auto; padding: 0 1.25rem; }
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 20;
-      background: rgba(255,255,255,0.92);
-      backdrop-filter: blur(14px);
-      border-bottom: 1px solid rgba(229,231,239,0.9);
-    }
-    nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-      min-height: 76px;
-    }
-    .logo img { height: 34px; width: auto; }
-    .nav-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      font-size: 0.92rem;
-      color: var(--muted);
-    }
-    .nav-links a { text-decoration: none; }
-    .nav-links a:hover { color: var(--accent); }
-    .hero {
-      padding: 5.5rem 0 3rem;
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 2rem;
-      align-items: center;
-    }
-    .eyebrow {
-      display: inline-block;
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 1rem;
-    }
-    h1, h2, h3 { line-height: 1.15; margin: 0; }
-    h1 {
-      font-size: clamp(2.7rem, 6vw, 5rem);
-      letter-spacing: -0.04em;
-      max-width: 11ch;
-    }
-    h2 {
-      font-size: clamp(2rem, 4vw, 3rem);
-      letter-spacing: -0.03em;
-      margin-bottom: 0.85rem;
-    }
-    h3 { font-size: 1.1rem; letter-spacing: -0.02em; }
-    .lede {
-      margin-top: 1.25rem;
-      max-width: 62ch;
-      color: var(--muted);
-      font-size: 1.05rem;
-    }
-    .actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.85rem;
-      margin-top: 1.75rem;
-    }
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0.9rem 1.2rem;
-      border-radius: 999px;
-      text-decoration: none;
-      font-weight: 600;
-      border: 1px solid var(--line);
-      transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
-    }
-    .btn:hover { transform: translateY(-1px); box-shadow: var(--shadow); }
-    .btn-primary { background: var(--accent); color: #fff; border-color: var(--accent); }
-    .btn-secondary { background: #fff; color: var(--text); }
-    .hero-card {
-      background: var(--surface);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      padding: 1.5rem;
-      box-shadow: var(--shadow);
-    }
-    .hero-graphic {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 0.75rem;
-      margin-top: 1rem;
-    }
-    .mini-graphic {
-      background: linear-gradient(180deg, #ffffff, #eef4ff);
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      padding: 0.85rem;
-      min-height: 118px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-    .mini-graphic svg { width: 100%; height: 54px; }
-    .mini-graphic span {
-      font-size: 0.8rem;
-      font-weight: 700;
-      color: var(--text);
-    }
-    .hero-card p, .card p, .note p, .footer-note { color: var(--muted); }
-    .checklist { list-style: none; padding: 0; margin: 1rem 0 0; }
-    .checklist li { padding: 0.55rem 0; border-top: 1px solid var(--line); }
-    .checklist li:first-child { border-top: 0; }
-    section { padding: 1rem 0 4rem; }
-    .section-head { margin-bottom: 1.5rem; }
-    .grid-3 {
-      display: grid;
-      gap: 1rem;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-    .card, .note {
-      background: #fff;
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      padding: 1.35rem;
-      box-shadow: 0 1px 0 rgba(15, 23, 42, 0.02);
-    }
-    .card .icon {
-      width: 3rem;
-      height: 3rem;
-      display: grid;
-      place-items: center;
-      border-radius: 0.95rem;
-      background: #eff6ff;
-      color: var(--accent);
-      margin-bottom: 1rem;
-      overflow: hidden;
-    }
-    .card .icon svg { width: 1.6rem; height: 1.6rem; }
-    .card ul {
-      margin: 0.85rem 0 0;
-      padding-left: 1.1rem;
-      color: var(--muted);
-    }
-    .tag {
-      display: inline-block;
-      margin-top: 1rem;
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--accent-2);
-    }
-    .split {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;
-      align-items: start;
-    }
-    .callout {
-      display: flex;
-      justify-content: space-between;
-      gap: 1rem;
-      align-items: center;
-      background: linear-gradient(180deg, #ffffff, #f8fafc);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      padding: 1.35rem;
-    }
-    .divider {
-      height: 1px;
-      background: var(--line);
-      margin: 0 0 4rem;
-    }
-    .timeline {
-      display: grid;
-      gap: 0.85rem;
-    }
-    .step {
-      display: grid;
-      grid-template-columns: 72px 1fr;
-      gap: 1rem;
-      align-items: start;
-      background: #fff;
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      padding: 1.1rem 1.25rem;
-    }
-    .step-num {
-      font-size: 2rem;
-      font-weight: 800;
-      color: #cbd5e1;
-      line-height: 1;
-    }
-    .contact {
-      display: grid;
-      grid-template-columns: 1fr 0.9fr;
-      gap: 1rem;
-      align-items: start;
-    }
-    footer {
-      border-top: 1px solid var(--line);
-      padding: 1.5rem 0 2.25rem;
-      color: var(--muted);
-      font-size: 0.92rem;
-    }
-    .footer-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem 1.25rem;
-      justify-content: space-between;
-      align-items: center;
-    }
-    @media (max-width: 900px) {
-      .hero, .grid-3, .split, .contact { grid-template-columns: 1fr; }
-      .callout { flex-direction: column; align-items: flex-start; }
-    }
-    @media (max-width: 640px) {
-      nav { padding: 0.75rem 0; }
-      .hero { padding-top: 3.5rem; }
-      h1 { max-width: none; }
-      .step { grid-template-columns: 1fr; }
-      .nav-links { gap: 0.7rem 1rem; font-size: 0.88rem; }
-    }
-  </style>
+}
+</script>
+<link rel="stylesheet" href="/css/site.css" />
+<script src="/js/site.js" defer></script>
 </head>
 <body>
-  <header>
-    <div class="wrap">
-      <nav>
-        <a class="logo" href="/"><img src="/img/Logo.png" alt="QuirkyIT" /></a>
-        <ul class="nav-links">
-          <li><a href="#services">Services</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
-  <main class="wrap">
-    <section class="hero">
-      <div>
-        <span class="eyebrow">Practical advice. Clear outcomes. Less noise.</span>
-        <h1>Confident technology decisions, made simple.</h1>
-        <p class="lede">QuirkyIT helps businesses and individuals with straightforward guidance on IT, cyber security and AI — so you can lower risk, save time, and choose the right tools without the jargon.</p>
-        <div class="actions">
-          <a class="btn btn-primary" href="#contact">Talk to QuirkyIT</a>
-          <a class="btn btn-secondary" href="#services">See services</a>
-        </div>
-      </div>
-      <div class="hero-card">
-        <h3>What matters to you</h3>
-        <ul class="checklist">
-          <li>Guidance shaped around you</li>
-          <li>Real value, without the complexity</li>
-          <li>AI guidance that's safe and realistic</li>
-          <li>Clear next steps you can act on</li>
-        </ul>
-        <div class="hero-graphic" aria-hidden="true">
-          <div class="mini-graphic">
-            <svg viewBox="0 0 120 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect x="8" y="8" width="104" height="44" rx="12" fill="#E0F2FE" />
-              <path d="M22 39C31 28 42 24 56 28C68 32 76 23 98 18" stroke="#1D4ED8" stroke-width="4" stroke-linecap="round" />
-              <circle cx="22" cy="39" r="4" fill="#0F766E" />
-              <circle cx="56" cy="28" r="4" fill="#0F766E" />
-              <circle cx="98" cy="18" r="4" fill="#0F766E" />
-            </svg>
-            <span>Clarity</span>
-          </div>
-          <div class="mini-graphic">
-            <svg viewBox="0 0 120 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect x="8" y="8" width="104" height="44" rx="12" fill="#ECFDF5" />
-              <rect x="18" y="26" width="20" height="16" rx="4" fill="#0F766E" opacity="0.9" />
-              <rect x="48" y="18" width="20" height="24" rx="4" fill="#1D4ED8" opacity="0.9" />
-              <rect x="78" y="22" width="20" height="20" rx="4" fill="#94A3B8" />
-            </svg>
-            <span>Value</span>
-          </div>
-          <div class="mini-graphic">
-            <svg viewBox="0 0 120 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect x="8" y="8" width="104" height="44" rx="12" fill="#EEF2FF" />
-              <path d="M24 42L44 22L62 34L90 16" stroke="#1D4ED8" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
-              <path d="M84 16H90V22" stroke="#0F766E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
-            </svg>
-            <span>Growth</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <div class="divider"></div>
-
-    <section id="services">
-      <div class="section-head">
-        <span class="eyebrow">What we do</span>
-        <h2>Built around what you actually need</h2>
-      </div>
-      <div class="grid-3">
-        <article class="card">
-          <div class="icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M4 6h16M4 12h10M4 18h13" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
-              <path d="M17 9l3 3-3 3" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </div>
-          <h3>Custom consultancy</h3>
-          <p>Guidance shaped around you — from cyber security and threat intelligence briefings to exposure reviews — so you can see your risks clearly and act with confidence.</p>
-          <ul>
-            <li>Cyber security &amp; threat intelligence briefings</li>
-            <li>Exposure reviews based on what's public about you</li>
-            <li>Practical next steps tied to your goals and risk</li>
-          </ul>
-          <span class="tag">Tailored to you</span>
-        </article>
-        <article class="card">
-          <div class="icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect x="4" y="5" width="16" height="14" rx="3" stroke="currentColor" stroke-width="2.2"/>
-              <path d="M8 9h8M8 13h5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
-            </svg>
-          </div>
-          <h3>Open-source IT solutions</h3>
-          <p>Practical IT tools chosen to fit you — including open-source options that free you from lock-in, adapt as you grow, and simply work.</p>
-          <ul>
-            <li>Tool selection and honest advice</li>
-            <li>Open options that keep you in control</li>
-            <li>Implementation guidance that stays practical</li>
-          </ul>
-          <span class="tag">Value and flexibility</span>
-        </article>
-        <article class="card">
-          <div class="icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M12 4v3M12 17v3M5 12H2M22 12h-3M6.8 6.8l2.1 2.1M15.1 15.1l2.1 2.1M17.2 6.8l-2.1 2.1M8.9 15.1l-2.1 2.1" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
-              <circle cx="12" cy="12" r="3.2" stroke="currentColor" stroke-width="2.2"/>
-            </svg>
-          </div>
-          <h3>AI, made practical</h3>
-          <p>Work out where AI genuinely helps — saving time, improving service, and fitting into everyday work — without the hype or the risk.</p>
-          <ul>
-            <li>A clear look at where AI could help</li>
-            <li>Real use cases, ranked by impact</li>
-            <li>Simple, safe steps to get started</li>
-          </ul>
-          <span class="tag">Practical AI adoption</span>
-        </article>
-      </div>
-    </section>
-
-    <section>
-      <div class="split">
-        <div class="note">
-          <span class="eyebrow">Why it matters</span>
-          <h3>Clearer decisions, less risk</h3>
-          <p>The right guidance helps you make better choices, cut risk, and focus on what actually matters to you.</p>
-        </div>
-        <div class="note">
-          <span class="eyebrow">Who it's for</span>
-          <h3>Businesses and individuals</h3>
-          <p>From growing teams to people protecting their own data and devices, QuirkyIT meets you where you are — no jargon, no pressure.</p>
-        </div>
-      </div>
-    </section>
-
-    <div class="divider"></div>
-
-    <section id="contact">
-      <div class="contact">
-        <div>
-          <span class="eyebrow">Contact</span>
-          <h2>Need help choosing the right approach?</h2>
-          <p class="lede">Whether you're a business or an individual, if you'd like help deciding what makes sense, QuirkyIT can take it from here.</p>
-        </div>
-        <div class="note">
-          <h3>Get in touch</h3>
-          <p>dean@quirkyit.com.au</p>
-          <p>Brisbane, Queensland, Australia</p>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="wrap footer-row">
-      <img src="/img/Logo.png" alt="QuirkyIT" style="height:28px; width:auto;" />
-      <div class="footer-note">© 2026 QuirkyIT Pty Ltd · Practical IT, Security &amp; AI Advice</div>
-    </div>
-  </footer>
+<a class="skip-link" href="#main">Skip to content</a>
+<header><div class="wrap"><nav class="main-nav" aria-label="Main navigation">
+<a class="logo" href="/" aria-label="QuirkyIT home"><img src="/img/Logo.png" width="1400" height="449" alt="QuirkyIT" /></a>
+<ul class="nav-links"><li><a href="/know-your-exposure/">Assessments</a></li><li><a href="/detect-and-monitor/">Detection</a></li><li><a href="/security-training/">Training</a></li><li><a href="/business-it/">Business IT</a></li><li><a href="/business-ai/">Business AI</a></li><li><a href="/ongoing-care/">Ongoing care</a></li></ul>
+<div class="nav-actions"><details class="mobile-menu"><summary>Services</summary><ul><li><a href="/know-your-exposure/">Assessments</a></li><li><a href="/detect-and-monitor/">Detection</a></li><li><a href="/security-training/">Training</a></li><li><a href="/business-it/">Business IT</a></li><li><a href="/business-ai/">Business AI</a></li><li><a href="/ongoing-care/">Ongoing care</a></li></ul></details><a class="btn btn-primary nav-contact" href="/#contact">Contact</a></div>
+</nav></div></header>
+<main class="wrap" id="main">
+<section class="hero" aria-labelledby="hero-title"><span class="eyebrow">Moreton Bay &amp; North Brisbane</span><h1 id="hero-title">Cyber security, IT and AI for your business.</h1><p class="lede">Protect your business, improve unreliable IT and reduce repetitive admin. Get practical help that fits your needs and budget.</p><div class="actions"><a class="btn btn-primary" href="mailto:dean@quirkyit.com.au?subject=Business%20enquiry">Talk to Dean</a><a class="btn btn-secondary" href="#services">Explore services</a></div></section>
+<section id="services" aria-labelledby="services-title"><span id="stages" class="anchor-alias" aria-hidden="true"></span><h2 id="services-title">What do you need help with?</h2><div class="service-grid"><article class="card"><span class="card-tag">Start here</span><h3><a href="/know-your-exposure/">Security assessments <span aria-hidden="true">&rarr;</span></a></h3><p>Find out where your business actually stands. The gaps get explained in plain terms, with a prioritised list of fixes for your IT team.</p></article>
+<article class="card"><h3><a href="/detect-and-monitor/">Detection &amp; investigation <span aria-hidden="true">&rarr;</span></a></h3><p>Would you notice an attack, and has one already happened? Logging and alert setup answers the first. A threat hunt through your existing records answers the second.</p></article>
+<article class="card"><h3><a href="/security-training/">Cyber security training <span aria-hidden="true">&rarr;</span></a></h3><p>Your team learns to spot the scams aimed at your business, check before they act and report quickly. Technical staff can train on incident triage too.</p></article>
+<article class="card"><h3>Business IT &amp; AI</h3><p>Shared files moved to the cloud, safer networks and sensible software choices, plus AI tools that cut repetitive admin and find answers in your own documents.</p><p class="card-links"><a href="/business-it/">IT, cloud &amp; networks <span aria-hidden="true">&rarr;</span></a> <a href="/business-ai/">AI &amp; automation <span aria-hidden="true">&rarr;</span></a></p></article></div></section>
+<section class="follow-on" aria-labelledby="care-title"><div><h2 id="care-title">Then keep it that way</h2><p>Once your systems are working, scheduled care tests your backups and alerts, keeps things up to date and reports anything that needs attention.</p></div><a class="btn btn-secondary" href="/ongoing-care/">Ongoing care</a></section>
+<section class="local-note" aria-labelledby="local-title"><h2 id="local-title">Local advice. Practical help.</h2><p>Work directly with Dean in Moreton Bay and North Brisbane, alongside your existing IT provider where needed.</p><p><a href="/about/">About QuirkyIT</a> &middot; <a href="/sample-assessment/">See a sample assessment</a></p></section>
+<section id="contact" class="cta-band" aria-labelledby="contact-title"><h2 id="contact-title">Tell Dean what you need</h2><p>A security concern, an IT problem or an idea to save time. You do not need to know which service to choose.</p><div class="actions"><a class="btn btn-primary" href="mailto:dean@quirkyit.com.au?subject=Business%20enquiry">Email Dean</a><button class="btn btn-secondary" type="button" data-copy-email hidden>Copy email address</button></div><p><a href="mailto:dean@quirkyit.com.au">dean@quirkyit.com.au</a></p><p id="copy-status" class="status" role="status" aria-live="polite"></p></section>
+</main>
+<footer><div class="wrap footer-row"><p>&copy; 2026 QuirkyIT Pty Ltd</p><a href="/about/">About QuirkyIT</a><p>Moreton Bay &amp; North Brisbane</p><a href="mailto:dean@quirkyit.com.au">dean@quirkyit.com.au</a></div></footer>
 </body>
 </html>

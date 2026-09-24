@@ -1,0 +1,25 @@
+{
+  "source_repository": "playbooks",
+  "templates": [
+    {
+      "source": "templates/report-template.md",
+      "output": "public-exposure.md",
+      "sha256": "eb0484b799586c6266c15625a82d77b2059549e094dba59bb4df4312af9ad9bc"
+    },
+    {
+      "source": "templates/nessus-report-template.md",
+      "output": "vulnerability-assessment.md",
+      "sha256": "117a9c0cfc34c0316c52e4a77fbcce4d5b28f0def738ffd0cfdc187b27834724"
+    },
+    {
+      "source": "templates/logging-baseline-report-template.md",
+      "output": "logging-baseline.md",
+      "sha256": "89269d543576dc89c5d1f7c6779c06346c49b3f80526cbc100291da98a4eab62"
+    },
+    {
+      "source": "templates/tripwire-deployment-report-template.md",
+      "output": "intrusion-tripwires.md",
+      "sha256": "ddecb2687b17252e84e76e62253e6e647e8e6ff01e442e5fe36e400deea7c9a6"
+    }
+  ]
+}

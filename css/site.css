@@ -50,9 +50,16 @@ button.btn { font: inherit; font-weight: 600; cursor: pointer; }
 .nav-contact { font-size: 0.9rem; padding: 0.5rem 0.9rem; }
 .service-grid, .offer-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
 .step-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; margin-top: 1.5rem; }
-.other-list { list-style: none; padding: 0; margin: 1.25rem 0 0; max-width: 72ch; }
-.other-list li { padding: 0.85rem 0; border-top: 1px solid var(--line); color: var(--muted); }
-.other-list a { font-weight: 600; }
+.plain-list { padding-left: 1.2rem; margin-top: 0.75rem; }
+.plain-list li { color: var(--muted); margin: 0.6rem 0; }
+.slider { margin-top: 1.5rem; }
+.slider-track { display: flex; gap: 1rem; list-style: none; margin: 0; padding: 0.25rem; overflow-x: auto; overscroll-behavior-x: contain; scroll-snap-type: x mandatory; scroll-behavior: smooth; scrollbar-width: thin; }
+.slider-track > .card { flex: 0 0 min(20rem, 84%); scroll-snap-align: start; background: #fff; }
+.slider-track:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; }
+.slider-nav { display: flex; gap: 0.5rem; margin-top: 0.9rem; }
+.slider-btn { display: inline-flex; align-items: center; justify-content: center; width: 44px; min-height: 44px; padding: 0; border: 1px solid var(--line); border-radius: 999px; background: #fff; color: var(--text); font: inherit; font-size: 1.1rem; line-height: 1; cursor: pointer; }
+.slider-btn:hover:not(:disabled) { background: var(--surface); }
+.slider-btn:disabled { opacity: 0.35; cursor: default; }
 .card { border: 1px solid var(--line); border-radius: var(--radius); padding: 1.3rem; }
 .card p { margin-top: 0.6rem; }
 .card h3 a { display: inline-flex; align-items: center; min-height: 44px; gap: 0.5rem; }
@@ -154,9 +161,11 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 3px soli
   .page-hero { padding-top: 1rem; }
   .footer-row { display: block; }
 }
-@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+@media (prefers-reduced-motion: reduce) { html, .slider-track { scroll-behavior: auto; } }
 @media print {
-  header, footer, .actions, .cta-band, .skip-link, .related { display: none; }
+  header, footer, .actions, .cta-band, .skip-link, .related, .slider-nav { display: none; }
+  .slider-track { display: block; overflow: visible; padding: 0; }
+  .slider-track > .card { width: auto; margin-bottom: 0.75rem; }
   .wrap { max-width: none; padding: 0; }
   .hero, .page-hero { padding-top: 0; }
   .card, .sample-finding { break-inside: avoid; }

@@ -21,21 +21,43 @@ $graphics.FillRectangle($blue, 0, 535, 1200, 95)
 $graphics.DrawString('quirkyit.com.au', $body, $white, 70, 560)
 $card.Save((Join-Path $siteRoot 'img\social-card.png'), [System.Drawing.Imaging.ImageFormat]::Png)
 $brandLogo.Dispose(); $graphics.Dispose(); $card.Dispose()
-# ICO contains a PNG frame; the SVG remains the scalable primary favicon.
-$iconBitmap = New-Object System.Drawing.Bitmap(32,32)
-$ig = [System.Drawing.Graphics]::FromImage($iconBitmap)
-$ig.Clear([System.Drawing.ColorTranslator]::FromHtml('#1d4ed8'))
-$ig.TextRenderingHint = [System.Drawing.Text.TextRenderingHint]::AntiAliasGridFit
-$iconFont = New-Object System.Drawing.Font('Arial', 27, [System.Drawing.FontStyle]::Bold, [System.Drawing.GraphicsUnit]::Pixel)
-$ig.DrawString('Q', $iconFont, $white, 2, 0)
-$pngStream = New-Object System.IO.MemoryStream
-$iconBitmap.Save($pngStream, [System.Drawing.Imaging.ImageFormat]::Png)
-$png = $pngStream.ToArray()
+# Reuse the original shield artwork, excluding the wordmark. Keep transparency
+# and its original proportions; centre the 358 x 449 crop in a square favicon.
+$logoSource = [System.Drawing.Bitmap]::FromFile((Join-Path $siteRoot 'img\Logo.png'))
+$shield = $logoSource.Clone([System.Drawing.Rectangle]::new(0, 0, 358, 449), [System.Drawing.Imaging.PixelFormat]::Format32bppArgb)
+$shieldStream = New-Object System.IO.MemoryStream
+$shield.Save($shieldStream, [System.Drawing.Imaging.ImageFormat]::Png)
+$shieldData = [Convert]::ToBase64String($shieldStream.ToArray())
+# The SVG embeds the original raster artwork, rather than an approximation.
+$svg = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 449 449"><image x="45.5" y="0" width="358" height="449" href="data:image/png;base64,' + $shieldData + '"/></svg>'
+[IO.File]::WriteAllText((Join-Path $siteRoot 'favicon.svg'), $svg, [Text.UTF8Encoding]::new($false))
+$sizes = @(16, 32, 48, 64, 128, 256)
+$frames = @()
+foreach ($size in $sizes) {
+    $iconBitmap = [System.Drawing.Bitmap]::new($size, $size, [System.Drawing.Imaging.PixelFormat]::Format32bppArgb)
+    $ig = [System.Drawing.Graphics]::FromImage($iconBitmap)
+    $ig.Clear([System.Drawing.Color]::Transparent)
+    $ig.InterpolationMode = [System.Drawing.Drawing2D.InterpolationMode]::HighQualityBicubic
+    $ig.PixelOffsetMode = [System.Drawing.Drawing2D.PixelOffsetMode]::HighQuality
+    $iconWidth = [single]($size * 358 / 449)
+    $ig.DrawImage($shield, [single](($size - $iconWidth) / 2), [single]0, $iconWidth, [single]$size)
+    $pngStream = New-Object System.IO.MemoryStream
+    $iconBitmap.Save($pngStream, [System.Drawing.Imaging.ImageFormat]::Png)
+    $frames += ,($pngStream.ToArray())
+    $pngStream.Dispose(); $ig.Dispose(); $iconBitmap.Dispose()
+}
 $icoStream = [System.IO.File]::Create((Join-Path $siteRoot 'favicon.ico'))
 $writer = New-Object System.IO.BinaryWriter($icoStream)
-$writer.Write([uint16]0); $writer.Write([uint16]1); $writer.Write([uint16]1)
-$writer.Write([byte]32); $writer.Write([byte]32); $writer.Write([byte]0); $writer.Write([byte]0)
-$writer.Write([uint16]1); $writer.Write([uint16]32); $writer.Write([uint32]$png.Length); $writer.Write([uint32]22)
-$writer.Write($png); $writer.Dispose(); $pngStream.Dispose()
-$ig.Dispose(); $iconBitmap.Dispose(); $iconFont.Dispose()
+$writer.Write([uint16]0); $writer.Write([uint16]1); $writer.Write([uint16]$sizes.Count)
+$offset = 6 + 16 * $sizes.Count
+for ($index = 0; $index -lt $sizes.Count; $index++) {
+    $dimension = if ($sizes[$index] -eq 256) { 0 } else { $sizes[$index] }
+    $writer.Write([byte]$dimension); $writer.Write([byte]$dimension)
+    $writer.Write([byte]0); $writer.Write([byte]0)
+    $writer.Write([uint16]1); $writer.Write([uint16]32)
+    $writer.Write([uint32]$frames[$index].Length); $writer.Write([uint32]$offset)
+    $offset += $frames[$index].Length
+}
+foreach ($frame in $frames) { $writer.Write([byte[]]$frame) }
+$writer.Dispose(); $shieldStream.Dispose(); $shield.Dispose(); $logoSource.Dispose()
 $heading.Dispose(); $body.Dispose(); $blue.Dispose(); $ink.Dispose(); $grey.Dispose()

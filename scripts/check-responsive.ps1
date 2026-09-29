@@ -34,7 +34,7 @@ function Evaluate([string]$Expression) {
 Send-CDP 'Runtime.enable' | Out-Null
 Send-CDP 'Network.enable' | Out-Null
 Send-CDP 'Network.setCacheDisabled' @{cacheDisabled=$true} | Out-Null
-$routes = @('/', '/know-your-exposure/', '/threat-brief/', '/detect-and-monitor/', '/about/', '/samples/', '/samples/exposure-report/', '/samples/threat-briefing/', '/samples/threat-hunt/', '/samples/logging-baseline/', '/samples/vulnerability-assessment/', '/samples/intrusion-tripwires/')
+$routes = @('/', '/know-your-exposure/', '/threat-brief/', '/detect-and-monitor/', '/about/', '/samples/', '/samples/exposure-report/', '/samples/threat-briefing/', '/samples/threat-hunt/', '/samples/logging-baseline/')
 $results = @()
 foreach ($width in @(320, 390, 768, 1440, 1920, 2560)) {
     Send-CDP 'Emulation.setDeviceMetricsOverride' @{width=$width;height=1000;deviceScaleFactor=1;mobile=($width -lt 768)} | Out-Null
